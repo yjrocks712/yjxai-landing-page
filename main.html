@@ -9,6 +9,8 @@
         :root {
             --primary-color: #6366f1;
             --accent-color: #8b5cf6;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
         
         * {
@@ -24,105 +26,104 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            padding: 2rem 1rem;
         }
         
-        h1 {
-            color: white;
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-        
-        p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1.2rem;
-            margin-bottom: 3rem;
-            text-align: center;
-        }
-        
-        .main-buttons {
-            display: flex;
-            gap: 1.5rem;
-            margin-bottom: 4rem;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        
-        .main-btn {
-            background-color: white;
-            color: var(--primary-color);
-            padding: 1rem 2rem;
-            border-radius: 0.5rem;
-            font-weight: 600;
-            text-decoration: none;
-            font-size: 1.2rem;
-            transition: all 0.3s;
-        }
-        
-        .main-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-        
-        .tiles {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            width: 90%;
-            margin: 0 auto;
-        }
-        
-        .tile {
-            background-color: white;
+        .profile-card {
+            background-color: var(--card-bg);
+            width: 100%;
+            max-width: 900px;
             border-radius: 1rem;
-            padding: 2rem;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--card-shadow);
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        .profile-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        
+        .profile-info {
+            flex: 1;
+        }
+        
+        .profile-info h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: #1a202c;
+        }
+        
+        .profile-info p {
+            color: #4a5568;
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .app-drawer {
+            width: 100%;
+            max-width: 900px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .app-icon {
+            background-color: var(--card-bg);
+            border-radius: 1rem;
+            padding: 2rem 1.5rem;
             text-align: center;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s;
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
         }
         
-        .tile:hover {
+        .app-icon:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
         
-        .tile i {
+        .app-icon i {
             font-size: 3rem;
             color: var(--primary-color);
             margin-bottom: 1rem;
         }
         
-        .tile h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #1e293b;
+        .app-icon h2 {
+            font-size: 1.3rem;
+            color: #1a202c;
+            margin-bottom: 0.5rem;
         }
         
-        .tile p {
-            color: #334155;
-            margin-bottom: 1.5rem;
-        }
-        
-        .tile-link {
-            display: inline-block;
-            color: var(--primary-color);
-            font-weight: 600;
-            text-decoration: none;
-        }
-        
-        .tile-link:hover {
-            text-decoration: underline;
+        .app-icon p {
+            font-size: 0.9rem;
+            color: #4a5568;
         }
         
         @media (max-width: 768px) {
-            .main-buttons {
+            .profile-card {
                 flex-direction: column;
-                align-items: center;
+                text-align: center;
+                padding: 2rem 1rem;
             }
             
-            .tiles {
+            .app-drawer {
                 grid-template-columns: 1fr;
             }
         }
@@ -131,34 +132,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Welcome to YJxAI</h1>
-    <p>"Let us together endeavor AI, AGI, and ASI as time flies by"</p>
-    
-    <div class="main-buttons">
-        <a href="index.html" class="main-btn">Model Recommendations</a>
-        <a href="problems.html" class="main-btn">Reasoning Problems</a>
-        <a href="projects.html" class="main-btn">My Projects</a>
+    <!-- Profile Card -->
+    <div class="profile-card">
+        <div class="profile-avatar">
+            <i class="fas fa-user"></i>
+        </div>
+        <div class="profile-info">
+            <h1>YJxAI</h1>
+            <p>"Let us together endeavor AI, AGI, and ASI as time flies by"</p>
+            <p><i class="fab fa-youtube"></i> <a href="https://www.youtube.com/channel/UCgXDesc6IZBfNWqWJ3fBpdg" style="color: #FF0000; text-decoration: none; font-weight: 600;">YouTube Channel</a></p>
+        </div>
     </div>
     
-    <div class="tiles">
-        <div class="tile">
+    <!-- App Drawer -->
+    <div class="app-drawer">
+        <a href="index.html" class="app-icon">
             <i class="fas fa-robot"></i>
-            <h3>Model Recommendations</h3>
-            <p>Discover the best AI models for various tasks based on personal testing and evaluation.</p>
-            <a href="index.html" class="tile-link">Explore Models</a>
-        </div>
-        <div class="tile">
+            <h2>Model Recommendations</h2>
+            <p>Best AI models for various tasks</p>
+        </a>
+        
+        <a href="problems.html" class="app-icon">
             <i class="fas fa-brain"></i>
-            <h3>Reasoning Problems</h3>
-            <p>Test your reasoning skills with challenging problems that push the limits of AI.</p>
-            <a href="problems.html" class="tile-link">Solve Problems</a>
-        </div>
-        <div class="tile">
+            <h2>Reasoning Problems</h2>
+            <p>Test your reasoning skills</p>
+        </a>
+        
+        <a href="projects.html" class="app-icon">
             <i class="fas fa-code"></i>
-            <h3>My Projects</h3>
-            <p>Explore my AI projects and experiments in the world of artificial intelligence.</p>
-            <a href="projects.html" class="tile-link">View Projects</a>
-        </div>
+            <h2>My Projects</h2>
+            <p>AI experiments & applications</p>
+        </a>
     </div>
 </body>
 </html> 
