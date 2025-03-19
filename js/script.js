@@ -223,13 +223,13 @@ document.addEventListener('DOMContentLoaded', () => {
     
     window.addEventListener('scroll', highlightNavOnScroll);
 
-    // Copy functionality for reasoning problems
+    // Copy functionality for problems
     const copyButtons = document.querySelectorAll('.copy-btn');
-    
+
     copyButtons.forEach(button => {
         button.addEventListener('click', () => {
             const problemNumber = button.getAttribute('data-problem');
-            const problemContent = button.previousElementSibling.textContent;
+            const problemContent = button.parentElement.querySelector('.problem-content').textContent;
             
             // Create a textarea element to hold the text
             const textarea = document.createElement('textarea');

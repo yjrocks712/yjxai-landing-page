@@ -47,6 +47,16 @@
             background-color: var(--primary-color);
             color: white;
         }
+        
+        .problem-content ul {
+            margin: 0.5rem 0 0.5rem 1.5rem;
+            padding: 0;
+        }
+        
+        .problem-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
     </style>
 </head>
 <body>
@@ -190,8 +200,111 @@
             <p class="section-desc">Test your programming skills with these algorithmic and data structure challenges.</p>
             
             <div class="coding-problems">
-                <!-- Coding problem cards will go here -->
-                <p style="text-align: center; padding: 3rem 0;">Coding problems coming soon!</p>
+                <!-- Coding problem cards -->
+                <div class="problem-card">
+                    <div class="problem-content">
+                        <h3>Snake Game with PyQt5</h3>
+                        <p>Write a snake game in Python using PyQt5. Implement the classic Snake gameplay with movement controls, score tracking, and game over conditions.</p>
+                    </div>
+                    <button class="copy-btn" data-problem="c1">Copy</button>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-content">
+                        <h3>CSS Dragon Animation</h3>
+                        <p>Code a dragon using HTML, CSS, and JavaScript. Show a side view of the dragon and create your best implementation in a single code file. Focus on animation and visual appeal.</p>
+                    </div>
+                    <button class="copy-btn" data-problem="c2">Copy</button>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-content">
+                        <h3>Super Mario in Pure Web Tech</h3>
+                        <p>Build the absolute best implementation of a Super Mario game in a webpage without using any external assets, all in one single code file. Include movement, jumping mechanics, enemies, and obstacles.</p>
+                    </div>
+                    <button class="copy-btn" data-problem="c3">Copy</button>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-content">
+                        <h3>Physics-Based Letter Animation</h3>
+                        <p>Create a JavaScript animation of falling letters with realistic physics. The letters should:</p>
+                        <ul>
+                            <li>Appear randomly at the top of the screen with varying sizes</li>
+                            <li>Fall under Earth's gravity (9.8 m/s²)</li>
+                            <li>Have collision detection based on their actual letter shapes</li>
+                            <li>Interact with other letters, ground, and screen boundaries</li>
+                            <li>Have density properties similar to water</li>
+                            <li>Dynamically adapt to screen size changes</li>
+                            <li>Display on a dark background</li>
+                            <li>Include a large ball as an obstruction that can be moved with the cursor</li>
+                        </ul>
+                    </div>
+                    <button class="copy-btn" data-problem="c4">Copy</button>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-content">
+                        <h3>Interactive Mascot in React</h3>
+                        <p>Create a single React webpage with a mascot in the middle whose eyes and expressions follow the movement of the cursor as if watching it. The mascot should make different expressions when the user clicks on options or interacts with the page. No external assets should be used.</p>
+                    </div>
+                    <button class="copy-btn" data-problem="c5">Copy</button>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-content">
+                        <h3>Bouncing Balls Simulation</h3>
+                        <p>Write a Python code for a hollow circle with an opening. Place two balls inside that bounce against the walls and collide with each other. Each time a ball exits through the opening, two new balls should appear inside the circle. Include distinct sound effects for wall hits, ball collisions, and exits.</p>
+                    </div>
+                    <button class="copy-btn" data-problem="c6">Copy</button>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-content">
+                        <h3>Earth Rotation Simulation</h3>
+                        <p>Design a Python program that simulates Earth's rotation with emphasis on creativity, realism, and smooth performance. Generate all visual elements programmatically without external images. Requirements:</p>
+                        <ul>
+                            <li>Continuous Rotation – Simulate Earth rotating on its axis</li>
+                            <li>Procedural Generation – Create dynamic representations of landmasses, oceans, and clouds</li>
+                            <li>Day-Night Cycle – Include effects that simulate daylight and darkness</li>
+                            <li>Creative Enhancements – Add atmospheric effects, space elements, or interactive features</li>
+                            <li>Optimization – Ensure smooth, responsive animation</li>
+                        </ul>
+                    </div>
+                    <button class="copy-btn" data-problem="c7">Copy</button>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-content">
+                        <h3>Advanced Pinball Game</h3>
+                        <p>Develop a fully-featured pinball game in Python without external assets or dependencies. Include:</p>
+                        <ul>
+                            <li>3D-like visuals with lighting, shading, and perspective</li>
+                            <li>Sophisticated ball physics (gravity, velocity, friction, bounces)</li>
+                            <li>Fluid flipper mechanics controlled by keyboard input</li>
+                            <li>Dynamic bumpers, ramps, and obstacles</li>
+                            <li>High-performance collision handling</li>
+                            <li>Real-time scoring with visual and audio feedback</li>
+                            <li>Game over and restart mechanics</li>
+                            <li>Polished UI and effects</li>
+                        </ul>
+                    </div>
+                    <button class="copy-btn" data-problem="c8">Copy</button>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-content">
+                        <h3>Pac-Man Without External Files</h3>
+                        <p>Create a state-of-the-art Pac-Man game in Python with no external files for assets. All visuals and sounds must be generated programmatically. Include:</p>
+                        <ul>
+                            <li>Core mechanics: movement, ghost AI, power-ups, scoring, win/lose conditions</li>
+                            <li>Programmatically rendered maze with walls, pellets, and characters</li>
+                            <li>Ghost behaviors (chase, scatter, etc.) as in the original game</li>
+                            <li>Programmatically generated visual elements and sound effects</li>
+                        </ul>
+                    </div>
+                    <button class="copy-btn" data-problem="c9">Copy</button>
+                </div>
             </div>
         </div>
     </section>
