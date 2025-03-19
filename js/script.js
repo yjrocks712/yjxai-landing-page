@@ -60,10 +60,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const modelVideos = {
         'grok3': 'jlfyhBUGnKs',         // Video provided by the user for Grok 3 Thinking
         'claude-overall': 'jlfyhBUGnKs',  // Using same video as Grok 3 Thinking
-        'openai-math': 'hKxrV9QjU2U',    // OpenAI O3 Mini: Faster, Smarter, But Is It Better?
+        'openai-math': ['qwgGUI7PWmY', 'uZSQRzdm4Og'],    // Both videos side by side
         'openai-backend': 'jlfyhBUGnKs',  // Using same video as Grok 3 Thinking
-        'claude-frontend': 'cDih5VGufhY', // The Most Powerful Way to Use Claude 3.7 Sonnet
-        'gpt-creative': 'XIeZH49yxXY',    // OpenAI o3-Mini Is HERE!
+        'claude-frontend': ['qwgGUI7PWmY', 'uZSQRzdm4Og'], // Both videos side by side
+        'gpt-creative': 'XIeZH49yxXY',    // OpenAI o3-Mini IS HERE!
         'claude-convo': 'GFRhJtn56BM',    // Claude Sonnet 3.5 vs Opus 3
         'deepseek': 'bOsvI3HYHgI',        // DeepSeek R1 Fully Tested - Insane Performance
         'gemma-reasoning': 'sn7lpfBQWJs',  // Gemma 3 - 27B: The BEST Open-Source LLM Yet!
@@ -101,15 +101,32 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Set video content if available
             if (videoId) {
-                modalVideo.innerHTML = `
-                    <div class="video-embed">
-                        <iframe width="100%" height="315" 
-                            src="https://www.youtube.com/embed/${videoId}" 
-                            title="YouTube video player" frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen></iframe>
-                    </div>
-                `;
+                // Check if we have multiple videos for this model
+                if (Array.isArray(videoId)) {
+                    modalVideo.innerHTML = `
+                        <div class="modal-video-grid">
+                            ${videoId.map(id => `
+                                <div class="video-embed-half">
+                                    <iframe width="100%" height="200" 
+                                        src="https://www.youtube.com/embed/${id}" 
+                                        title="YouTube video player" frameborder="0" 
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                        allowfullscreen></iframe>
+                                </div>
+                            `).join('')}
+                        </div>
+                    `;
+                } else {
+                    modalVideo.innerHTML = `
+                        <div class="video-embed">
+                            <iframe width="100%" height="315" 
+                                src="https://www.youtube.com/embed/${videoId}" 
+                                title="YouTube video player" frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen></iframe>
+                        </div>
+                    `;
+                }
             } else {
                 modalVideo.innerHTML = '<p>No video available for this model.</p>';
             }
