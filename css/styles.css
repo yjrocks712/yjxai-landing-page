@@ -1,14 +1,12 @@
 :root {
-    --primary-color: #000;
+    --primary-color: #6366f1;
     --secondary-color: #4f46e5;
-    --accent-color: #333;
+    --accent-color: #8b5cf6;
     --dark-color: #1e293b;
     --light-color: #f8fafc;
     --text-color: #334155;
-    --card-bg: #fff;
-    --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
-    --text-primary: #000;
-    --text-secondary: #333;
+    --card-bg: #ffffff;
+    --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -19,11 +17,9 @@
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: #fff;
+    color: var(--text-color);
     line-height: 1.6;
     background-color: #f9fafb;
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-    min-height: 100vh;
 }
 
 .container {
@@ -118,7 +114,7 @@ nav ul li a:hover {
 
 .btn {
     display: inline-block;
-    background-color: #fff;
+    background-color: white;
     color: var(--primary-color);
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
@@ -128,7 +124,7 @@ nav ul li a:hover {
 
 .btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .hero-cta {
@@ -153,8 +149,8 @@ nav ul li a:hover {
 }
 
 .btn-youtube {
-    background-color: #FF0000;
-    color: #fff;
+    background-color: #ff0000;
+    color: white;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -172,8 +168,8 @@ nav ul li a:hover {
 }
 
 .btn-youtube-large {
-    background-color: #FF0000;
-    color: #fff;
+    background-color: #ff0000;
+    color: white;
     padding: 1rem 2rem;
     border-radius: 0.5rem;
     font-size: 1.2rem;
@@ -194,8 +190,8 @@ nav ul li a:hover {
 }
 
 .btn-youtube-small {
-    background-color: #FF0000;
-    color: #fff;
+    background-color: #ff0000;
+    color: white;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     font-weight: 600;
@@ -210,7 +206,7 @@ nav ul li a:hover {
 }
 
 .youtube-link {
-    color: #FF0000;
+    color: #ff0000;
     font-weight: 700;
 }
 
@@ -451,7 +447,7 @@ input:checked + .slider:before {
 
 .description {
     font-size: 0.9rem;
-    color: var(--text-secondary);
+    color: var(--text-color);
 }
 
 /* About Section */
@@ -562,7 +558,7 @@ input:checked + .slider:before {
 }
 
 .social-link.youtube-link {
-    color: #FF0000;
+    color: #ff0000;
 }
 
 .social-link.youtube-link:hover {
@@ -751,7 +747,7 @@ footer {
 }
 
 .modal-content {
-    background-color: #fff;
+    background-color: #fefefe;
     margin: 10% auto;
     padding: 2rem;
     border-radius: 1rem;
@@ -771,7 +767,7 @@ footer {
     position: absolute;
     right: 1.5rem;
     top: 1.5rem;
-    color: #333;
+    color: #aaa;
     font-size: 2rem;
     font-weight: bold;
     cursor: pointer;
@@ -1061,234 +1057,5 @@ footer {
     
     .copy-btn {
         align-self: flex-end;
-    }
-}
-
-/* Section styling */
-.section {
-    padding: 4rem 0;
-}
-
-.section-title {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    text-align: center;
-    color: #fff;
-}
-
-.section-desc {
-    font-size: 1.1rem;
-    margin-bottom: 3rem;
-    text-align: center;
-    opacity: 0.9;
-}
-
-/* Home button for secondary pages */
-.home-btn {
-    display: inline-block;
-    background-color: white;
-    color: var(--primary-color);
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    margin-top: 1rem;
-    font-weight: 600;
-    text-decoration: none;
-}
-
-.home-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Ad container */
-.ad-container {
-    margin: 2rem 0;
-    text-align: center;
-}
-
-/* Modal styles */
-.opinion-modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-}
-
-.modal-content {
-    background-color: #fff;
-    margin: 10% auto;
-    padding: 2rem;
-    border-radius: 1rem;
-    width: 80%;
-    max-width: 800px;
-    max-height: 80vh;
-    overflow-y: auto;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-.close-btn {
-    color: #333;
-    float: right;
-    font-size: 2rem;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.close-btn:hover {
-    color: #000;
-}
-
-.modal-body {
-    margin-top: 1rem;
-}
-
-.modal-body h2 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-}
-
-.modal-body p {
-    color: var(--text-secondary);
-    margin-bottom: 1rem;
-    line-height: 1.6;
-}
-
-/* Coming soon section */
-.coming-soon {
-    text-align: center;
-    padding: 5rem 0;
-}
-
-.coming-soon h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    color: #fff;
-}
-
-.coming-soon p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    color: rgba(255, 255, 255, 0.9);
-}
-
-.coming-soon .icon {
-    font-size: 6rem;
-    color: #fff;
-    margin-bottom: 2rem;
-    animation: pulse 2s infinite;
-}
-
-.youtube-link {
-    color: #FF0000;
-    font-weight: 600;
-    text-decoration: none;
-}
-
-.youtube-link:hover {
-    text-decoration: underline;
-}
-
-/* Filter buttons */
-.filters {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: 2rem;
-    gap: 0.5rem;
-}
-
-.filter-btn {
-    background-color: #fff;
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
-    padding: 0.5rem 1rem;
-    border-radius: 2rem;
-    cursor: pointer;
-    font-weight: 500;
-    transition: all 0.3s;
-}
-
-.filter-btn:hover, .filter-btn.active {
-    background-color: var(--primary-color);
-    color: #fff;
-}
-
-/* Reasoning problems styles */
-.reasoning-problems {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.problem-card {
-    background-color: #fff;
-    border-radius: 1rem;
-    overflow: hidden;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s;
-}
-
-.problem-card:hover {
-    transform: translateY(-10px);
-}
-
-.problem-card h3 {
-    background-color: var(--primary-color);
-    color: #fff;
-    padding: 1rem;
-    margin: 0;
-}
-
-.problem-card .problem-content {
-    padding: 1rem;
-    color: var(--text-secondary);
-}
-
-.problem-card .difficulty {
-    display: inline-block;
-    padding: 0.25rem 0.5rem;
-    border-radius: 0.25rem;
-    margin-bottom: 0.5rem;
-    font-size: 0.8rem;
-    font-weight: 600;
-}
-
-.difficulty-easy {
-    background-color: #10B981;
-    color: #fff;
-}
-
-.difficulty-medium {
-    background-color: #F59E0B;
-    color: #fff;
-}
-
-.difficulty-hard {
-    background-color: #EF4444;
-    color: #fff;
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
-}
-
-/* Media queries */
-@media (max-width: 768px) {
-    .rec-cards, .reasoning-problems {
-        grid-template-columns: 1fr;
-    }
-
-    .filters {
-        flex-direction: column;
-        align-items: center;
     }
 } 

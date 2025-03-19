@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YJxAI - Reasoning Problems</title>
+    <title>YJxAI - Problem Collection</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -24,14 +24,47 @@
             transform: translateY(-3px);
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
         }
+        
+        .problem-categories {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .category-btn {
+            background-color: white;
+            color: var(--primary-color);
+            padding: 0.5rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .category-btn:hover, .category-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
     </style>
 </head>
 <body>
     <section class="hero">
         <div class="container">
-            <h1>REASONING BENCH</h1>
-            <p>Test your reasoning skills with these challenging problems</p>
+            <h1>PROBLEM COLLECTION</h1>
+            <p>Test your skills with challenging problems in reasoning, mathematics, and coding</p>
             <a href="main.html" class="home-btn"><i class="fas fa-home"></i> Back to Home</a>
+        </div>
+    </section>
+
+    <section id="problem-categories" class="section">
+        <div class="container">
+            <div class="problem-categories">
+                <a href="#reasoning" class="category-btn active">Reasoning Problems</a>
+                <a href="#math" class="category-btn">Math Problems</a>
+                <a href="#coding" class="category-btn">Coding Problems</a>
+            </div>
         </div>
     </section>
 
@@ -138,6 +171,30 @@
             </div>
         </div>
     </section>
+    
+    <section id="math-problems" class="section">
+        <div class="container">
+            <h2 class="section-title">Math Problems</h2>
+            <p class="section-desc">Challenge yourself with these mathematical problems ranging from algebra to calculus.</p>
+            
+            <div class="math-problems">
+                <!-- Math problem cards will go here -->
+                <p style="text-align: center; padding: 3rem 0;">Math problems coming soon!</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="coding-problems" class="section">
+        <div class="container">
+            <h2 class="section-title">Coding Problems</h2>
+            <p class="section-desc">Test your programming skills with these algorithmic and data structure challenges.</p>
+            
+            <div class="coding-problems">
+                <!-- Coding problem cards will go here -->
+                <p style="text-align: center; padding: 3rem 0;">Coding problems coming soon!</p>
+            </div>
+        </div>
+    </section>
 
     <!-- Ad Container -->
     <div class="ad-container">
@@ -155,5 +212,41 @@
     </div>
 
     <script src="js/script.js"></script>
+    <script>
+        // Simple tab switching functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            const sections = {
+                '#reasoning': document.getElementById('reasoning-bench'),
+                '#math': document.getElementById('math-problems'),
+                '#coding': document.getElementById('coding-problems')
+            };
+            
+            // Initially hide math and coding sections
+            sections['#math'].style.display = 'none';
+            sections['#coding'].style.display = 'none';
+            
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Remove active class from all buttons
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Hide all sections
+                    Object.values(sections).forEach(section => {
+                        section.style.display = 'none';
+                    });
+                    
+                    // Show selected section
+                    const targetId = this.getAttribute('href');
+                    sections[targetId].style.display = 'block';
+                });
+            });
+        });
+    </script>
 </body>
 </html> 
