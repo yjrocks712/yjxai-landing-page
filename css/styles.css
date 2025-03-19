@@ -508,6 +508,52 @@ footer {
     opacity: 0.7;
 }
 
+/* Page Layout with Sidebars */
+.page-wrapper {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+.main-content {
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sidebar-ad {
+    width: 160px;
+    display: none; /* Hidden by default on smaller screens */
+}
+
+.sticky-ad {
+    position: sticky;
+    top: 100px;
+    padding: 10px 0;
+}
+
+.sidebar-adunit {
+    min-height: 600px;
+    background-color: #f1f5f9;
+    border-radius: 0.5rem;
+}
+
+.sidebar-left {
+    margin-right: 15px;
+}
+
+.sidebar-right {
+    margin-left: 15px;
+}
+
+/* Show sidebar ads only on larger screens */
+@media (min-width: 1600px) {
+    .sidebar-ad {
+        display: block;
+    }
+}
+
 /* Media Queries */
 @media (max-width: 768px) {
     .hero h1 {
