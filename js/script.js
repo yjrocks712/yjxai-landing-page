@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'gemma-math': 'urb3FEmX6kY',      // Video provided by the user for efficient models
         'llama-coding': 'urb3FEmX6kY',    // Video provided by the user for efficient models
         'gemma-overall': 'urb3FEmX6kY',   // Video provided by the user for efficient models
-        'gemmini': 'xxCkuxQuT_g',         // Gemma 2 - Google's New 9B and 27B Open Weights Models
+        'gemmini': 'HT2Z_n0fAig',         // Video provided by the user for Best Free Pretrained Model
         'cursor': 'kL3lX5dVUCw'           // Microsoft's Phi-4 (placeholder)
     };
 
