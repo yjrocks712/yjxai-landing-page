@@ -229,11 +229,20 @@ document.addEventListener('DOMContentLoaded', () => {
     copyButtons.forEach(button => {
         button.addEventListener('click', () => {
             const problemNumber = button.getAttribute('data-problem');
-            const problemContent = button.parentElement.querySelector('.problem-content').textContent;
+            const problemContent = button.parentElement.querySelector('.problem-content');
+            
+            // Get all content except the title
+            let contentToCopy = '';
+            problemContent.childNodes.forEach(node => {
+                // Skip the h3 title element
+                if (node.nodeName !== 'H3') {
+                    contentToCopy += node.textContent || '';
+                }
+            });
             
             // Create a textarea element to hold the text
             const textarea = document.createElement('textarea');
-            textarea.value = problemContent;
+            textarea.value = contentToCopy.trim();
             document.body.appendChild(textarea);
             
             // Select the text and copy it
