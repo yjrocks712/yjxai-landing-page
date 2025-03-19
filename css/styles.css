@@ -1,12 +1,12 @@
 :root {
-    --primary-color: #6366f1;
-    --secondary-color: #4f46e5;
-    --accent-color: #8b5cf6;
+    --primary-color: #64B5F6; /* Light blue */
+    --secondary-color: #42A5F5; /* Slightly darker blue */
+    --accent-color: #29B6F6; /* Sky blue */
     --dark-color: #1e293b;
-    --light-color: #f8fafc;
+    --light-color: #f0f8ff; /* Alice blue - very light blue */
     --text-color: #334155;
     --card-bg: #ffffff;
-    --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --card-shadow: 0 10px 15px -3px rgba(100, 181, 246, 0.2);
 }
 
 * {
@@ -170,39 +170,44 @@ nav ul li a:hover {
 .btn-youtube-large {
     background-color: #ff0000;
     color: white;
-    padding: 1rem 2rem;
+    padding: 1rem 2.5rem;
     border-radius: 0.5rem;
     font-size: 1.2rem;
     font-weight: 600;
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    margin: 1.5rem auto;
-    max-width: 300px;
+    gap: 0.75rem;
+    box-shadow: 0 4px 6px rgba(255, 0, 0, 0.25);
     transition: all 0.3s;
+    margin-top: 1rem;
+    text-decoration: none;
 }
 
 .btn-youtube-large:hover {
     background-color: #cc0000;
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 10px 20px rgba(204, 0, 0, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 0, 0, 0.3);
 }
 
 .btn-youtube-small {
     background-color: #ff0000;
     color: white;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1.25rem;
     border-radius: 0.5rem;
+    font-size: 0.9rem;
     font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 6px rgba(255, 0, 0, 0.25);
     transition: all 0.3s;
-    display: inline-block;
-    margin-top: 0.5rem;
+    text-decoration: none;
 }
 
 .btn-youtube-small:hover {
     background-color: #cc0000;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 0, 0, 0.3);
 }
 
 .youtube-link {
@@ -391,35 +396,33 @@ input:checked + .slider:before {
 }
 
 .rec-card {
-    background-color: var(--card-bg);
+    background-color: var(--light-color);
     border-radius: 1rem;
-    padding: 1.5rem;
-    box-shadow: var(--card-shadow);
-    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 2rem;
+    text-align: center;
     position: relative;
+    transition: all 0.3s;
+    cursor: pointer;
     overflow: hidden;
+    box-shadow: var(--card-shadow);
+    border-top: 4px solid transparent;
+}
+
+.rec-card:nth-child(3n+1) {
+    border-color: #4FC3F7; /* Light blue */
+}
+
+.rec-card:nth-child(3n+2) {
+    border-color: #26C6DA; /* Cyan */
+}
+
+.rec-card:nth-child(3n+3) {
+    border-color: #26A69A; /* Teal */
 }
 
 .rec-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-}
-
-.rec-card.featured {
-    border: 2px solid var(--accent-color);
-}
-
-.rec-card.featured::before {
-    content: "Top Pick";
-    position: absolute;
-    top: 1rem;
-    right: -2rem;
-    background-color: var(--accent-color);
-    color: white;
-    padding: 0.25rem 2rem;
-    transform: rotate(45deg);
-    font-size: 0.75rem;
-    font-weight: 600;
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(100, 181, 246, 0.3);
 }
 
 .model-logo {
@@ -471,18 +474,31 @@ input:checked + .slider:before {
 
 .about-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    margin: 3rem 0;
+    margin: 2rem 0;
 }
 
 .about-item {
-    background-color: white;
+    background-color: var(--light-color);
+    padding: 2rem;
     border-radius: 1rem;
-    padding: 1.5rem;
     box-shadow: var(--card-shadow);
     text-align: center;
-    transition: transform 0.3s;
+    transition: all 0.3s;
+    border-top: 4px solid;
+}
+
+.about-item:nth-child(1) {
+    border-color: #4FC3F7; /* Light blue */
+}
+
+.about-item:nth-child(2) {
+    border-color: #26C6DA; /* Cyan */
+}
+
+.about-item:nth-child(3) {
+    border-color: #26A69A; /* Teal */
 }
 
 .about-item:hover {
@@ -1058,4 +1074,55 @@ footer {
     .copy-btn {
         align-self: flex-end;
     }
+}
+
+.rec-card.featured {
+    border: 2px solid #26A69A; /* Teal */
+    background-color: rgba(224, 242, 255, 0.5); /* Very light blue background */
+}
+
+.rec-card.featured::before {
+    content: "Top Pick";
+    position: absolute;
+    top: 1rem;
+    right: -2rem;
+    background-color: #26A69A;
+    color: white;
+    padding: 0.25rem 2rem;
+    transform: rotate(45deg);
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* Make category buttons more colorful */
+.category-btn {
+    background-color: white;
+    color: var(--primary-color);
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+}
+
+.category-btn:nth-child(1) {
+    border-color: #4FC3F7; /* Light blue */
+}
+
+.category-btn:nth-child(2) {
+    border-color: #26C6DA; /* Cyan */
+}
+
+.category-btn:nth-child(3) {
+    border-color: #26A69A; /* Teal */
+}
+
+.category-btn:hover, .category-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.category-btn.active {
+    box-shadow: 0 4px 12px rgba(100, 181, 246, 0.4);
 } 

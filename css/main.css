@@ -1,12 +1,12 @@
 :root {
-    --primary-color: #6366f1;
-    --secondary-color: #4f46e5;
-    --accent-color: #8b5cf6;
+    --primary-color: #64B5F6; /* Light blue */
+    --secondary-color: #42A5F5; /* Slightly darker blue */
+    --accent-color: #29B6F6; /* Sky blue */
     --dark-color: #1e293b;
-    --light-color: #f8fafc;
+    --light-color: #f0f8ff; /* Alice blue - very light blue */
     --text-color: #334155;
     --card-bg: #ffffff;
-    --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --card-shadow: 0 10px 15px -3px rgba(100, 181, 246, 0.2);
 }
 
 * {
