@@ -27,6 +27,18 @@
             flex-direction: column;
             align-items: center;
             padding: 2rem 1rem;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        #particles-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
         }
         
         .profile-card {
@@ -40,6 +52,8 @@
             display: flex;
             align-items: center;
             gap: 1.5rem;
+            position: relative;
+            z-index: 1;
         }
         
         .profile-avatar {
@@ -78,6 +92,8 @@
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1.5rem;
             margin-top: 1rem;
+            position: relative;
+            z-index: 1;
         }
         
         .app-icon {
@@ -123,6 +139,8 @@
             backdrop-filter: blur(10px);
             padding: 1.5rem 0;
             text-align: center;
+            position: relative;
+            z-index: 1;
         }
         
         footer p {
@@ -153,6 +171,11 @@
             color: #FF0000 !important;
         }
         
+        .container {
+            position: relative;
+            z-index: 1;
+        }
+        
         @media (max-width: 768px) {
             .profile-card {
                 flex-direction: column;
@@ -169,6 +192,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Particles Canvas -->
+    <canvas id="particles-canvas"></canvas>
+    
     <!-- Profile Card -->
     <div class="profile-card">
         <div class="profile-avatar">
@@ -265,5 +291,129 @@
         <p>&copy; 2023-2025 YJxAI. All rights reserved.</p>
         <p>"Let us together endeavor AI, AGI, and ASI as time flies by"</p>
     </footer>
+    
+    <!-- Particles JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the canvas element
+            const canvas = document.getElementById('particles-canvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Set canvas dimensions
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+            
+            // Particle settings
+            const particlesArray = [];
+            const numberOfParticles = 25; // Fewer particles since icons are larger
+            
+            // Create icon elements for particles
+            const icons = [
+                '<i class="fas fa-robot"></i>',
+                '<i class="fas fa-brain"></i>',
+                '<i class="fas fa-code"></i>'
+            ];
+            
+            // Create temporary div to render icons
+            const iconContainer = document.createElement('div');
+            document.body.appendChild(iconContainer);
+            iconContainer.style.position = 'absolute';
+            iconContainer.style.top = '-9999px';
+            iconContainer.style.left = '-9999px';
+            
+            // Create particle class
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.size = Math.random() * 15 + 10; // Larger size for icons
+                    this.speedX = Math.random() * 1 - 0.5;
+                    this.speedY = Math.random() * 1 - 0.5;
+                    this.opacity = Math.random() * 0.3 + 0.1; // Lower opacity
+                    this.icon = icons[Math.floor(Math.random() * icons.length)];
+                    this.angle = Math.random() * 360;
+                    this.rotationSpeed = (Math.random() * 2 - 1) * 0.5;
+                }
+                
+                // Update particle position
+                update() {
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+                    this.angle += this.rotationSpeed;
+                    
+                    // Boundary check
+                    if (this.x > canvas.width) {
+                        this.x = 0;
+                    } else if (this.x < 0) {
+                        this.x = canvas.width;
+                    }
+                    
+                    if (this.y > canvas.height) {
+                        this.y = 0;
+                    } else if (this.y < 0) {
+                        this.y = canvas.height;
+                    }
+                }
+                
+                // Draw particle as icon
+                draw() {
+                    ctx.save();
+                    ctx.translate(this.x, this.y);
+                    ctx.rotate(this.angle * Math.PI / 180);
+                    
+                    // Render the icon with font-awesome
+                    ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+                    ctx.font = `${this.size}px "Font Awesome 6 Free"`;
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'middle';
+                    
+                    // Map FontAwesome icons to their unicode characters
+                    let iconCode = '';
+                    if (this.icon.includes('fa-robot')) {
+                        iconCode = '\uf544'; // robot icon unicode
+                    } else if (this.icon.includes('fa-brain')) {
+                        iconCode = '\uf5dc'; // brain icon unicode
+                    } else if (this.icon.includes('fa-code')) {
+                        iconCode = '\uf121'; // code icon unicode
+                    }
+                    
+                    ctx.fillText(iconCode, 0, 0);
+                    ctx.restore();
+                }
+            }
+            
+            // Create particles
+            function init() {
+                for (let i = 0; i < numberOfParticles; i++) {
+                    particlesArray.push(new Particle());
+                }
+            }
+            
+            // Animation loop
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                for (let i = 0; i < particlesArray.length; i++) {
+                    particlesArray[i].update();
+                    particlesArray[i].draw();
+                }
+                
+                requestAnimationFrame(animate);
+            }
+            
+            init();
+            animate();
+            
+            // Remove temporary container
+            setTimeout(() => {
+                document.body.removeChild(iconContainer);
+            }, 1000);
+        });
+    </script>
 </body>
 </html> 
