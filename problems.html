@@ -8,6 +8,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9024904640547627" crossorigin="anonymous"></script>
+    
+    <!-- MathJax support for mathematical notation -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    
     <style>
         .home-btn {
             display: inline-block;
@@ -56,6 +73,16 @@
         .problem-content li {
             margin-bottom: 0.5rem;
             line-height: 1.4;
+        }
+        
+        /* Style for math expressions */
+        .problem-content p {
+            line-height: 1.6;
+        }
+        
+        /* Ensure math expressions render properly on copy */
+        .problem-content .math {
+            font-family: 'MJXc-TeX-math-I', system-ui, -apple-system, serif;
         }
     </style>
 </head>
@@ -188,8 +215,47 @@
             <p class="section-desc">Challenge yourself with these mathematical problems ranging from algebra to calculus.</p>
             
             <div class="math-problems">
-                <!-- Math problem cards will go here -->
-                <p style="text-align: center; padding: 3rem 0;">Math problems coming soon!</p>
+                <!-- Math problem cards -->
+                <div class="problem-card">
+                    <div class="problem-content">
+                        <h3>Rectangular Boxes and Spheres</h3>
+                        <p>Let $\mathcal{B}$ be the set of rectangular boxes with surface area 54 and volume 23. Let r be the radius of the smallest sphere that can contain each of the rectangular boxes that are elements of $\mathcal{B}$. The value of r^2 can be written as $\frac{p}{q}$, where p and q are relatively prime positive integers. Find p+q.</p>
+                        <p><strong>Answer:</strong> 721</p>
+                    </div>
+                    <button class="copy-btn" data-problem="m1">Copy</button>
+                </div>
+                
+                <div class="problem-card">
+                    <div class="problem-content">
+                        <h3>Compound Interest with Step Function</h3>
+                        <p>I have an initial balance of $100,000, and I earn $15,000 per month for every $100,000 in my balance. As my balance grows, my earnings increase in steps. Specifically, each time my balance increases by $100,000, my monthly earnings increase by $15,000. For example:</p>
+                        <ul>
+                            <li>With a balance of $100,000, I earn $15,000 per month.</li>
+                            <li>Once my balance reaches $200,000, I start earning $30,000 per month.</li>
+                            <li>When my balance reaches $300,000, I earn $45,000 per month, and so on.</li>
+                        </ul>
+                        <p>Assuming my balance grows month by month based on these earnings, how much will I have after 3 years (36 months)?</p>
+                    </div>
+                    <button class="copy-btn" data-problem="m2">Copy</button>
+                </div>
+                
+                <div class="problem-card">
+                    <div class="problem-content">
+                        <h3>Shaded Circle Segment</h3>
+                        <p>A circle is divided into four sections by three vertical lines. The diameter of the circle is split into four equal segments, each of length 'r'. The rightmost section is shaded. What percentage of the whole circle's area is represented by the shaded region?</p>
+                        <p><strong>Answer:</strong> 19.55%</p>
+                    </div>
+                    <button class="copy-btn" data-problem="m3">Copy</button>
+                </div>
+                
+                <div class="problem-card">
+                    <div class="problem-content">
+                        <h3>Tetrahedron Interior Point</h3>
+                        <p>Let ABCD be a tetrahedron such that AB = CD = √41, AC = BD = √80, and BC = AD = √89. There exists a point I inside the tetrahedron such that the distances from I to each of the faces of the tetrahedron are all equal. This distance can be written in the form (m√n) / p, where m, n, and p are positive integers, m and p are relatively prime, and n is not divisible by the square of any prime. Find m + n + p.</p>
+                        <p><strong>Answer:</strong> 104</p>
+                    </div>
+                    <button class="copy-btn" data-problem="m4">Copy</button>
+                </div>
             </div>
         </div>
     </section>
