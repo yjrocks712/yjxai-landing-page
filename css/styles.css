@@ -123,6 +123,140 @@ nav ul li a:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
+.hero-cta {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.subscribers-note {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-top: 0.5rem;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.7; }
+    50% { opacity: 1; }
+    100% { opacity: 0.7; }
+}
+
+.btn-youtube {
+    background-color: #ff0000;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s;
+}
+
+.btn-youtube:hover {
+    background-color: #cc0000;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(204, 0, 0, 0.2);
+}
+
+.youtube-icon {
+    font-size: 1.2rem;
+}
+
+.btn-youtube-large {
+    background-color: #ff0000;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1.5rem auto;
+    max-width: 300px;
+    transition: all 0.3s;
+}
+
+.btn-youtube-large:hover {
+    background-color: #cc0000;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(204, 0, 0, 0.2);
+}
+
+.btn-youtube-small {
+    background-color: #ff0000;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.3s;
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+
+.btn-youtube-small:hover {
+    background-color: #cc0000;
+    transform: translateY(-2px);
+}
+
+.youtube-link {
+    color: #ff0000;
+    font-weight: 700;
+}
+
+.youtube-link:hover {
+    color: #cc0000;
+}
+
+.benefits-list {
+    max-width: 800px;
+    margin: 1.5rem auto;
+    text-align: left;
+    padding-left: 2rem;
+}
+
+.benefits-list li {
+    margin-bottom: 0.75rem;
+}
+
+.subscribe-container {
+    background-color: #f8f9fa;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-top: 2rem;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e9ecef;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.subscribe-container h3 {
+    margin-bottom: 1rem;
+    color: var(--dark-color);
+}
+
+.action-note {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 0.5rem;
+}
+
+.subscribe-reminder {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 0.5rem;
+    border: 1px dashed #dee2e6;
+}
+
+.subscribe-reminder p {
+    margin-bottom: 0.5rem;
+}
+
 /* Ad Container */
 .ad-container {
     background-color: #f1f5f9;
@@ -281,5 +415,15 @@ footer {
     
     nav {
         display: none;
+    }
+    
+    .hero-cta {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn-youtube-large {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
     }
 } 
