@@ -49,11 +49,11 @@ document.addEventListener('DOMContentLoaded', () => {
         'claude-convo': `This again is a personal preference and is based on how the models have been fine-tuned. But from the time of Claude 3 Opus I have seen that Claude models feel more conversational and also for personal advice and everything I have found these models to put their point forward boldly unlike OpenAI models which don't put their point of view very straightforwardly. So according to me this is the best conversational model. But especially this domain can be subjective. And I respect everyone's opinion.`,
         'deepseek': `Deepseek is the first company other than OpenAI which released a thinking model and this being on par with o1 at that time was absolutely free giving tough competition to OpenAI. Even now this is the best opensource and free reasoning model and best free model overall. But remember to be careful on the website because the website has privacy concerns.`,
         'gemma-reasoning': `I never thought a 27b model would be able to beat GPT-4o mini, my favorite when it comes to efficient models. It clearly beats GPT-4o mini when it comes to reasoning and there is no doubt about it. So the most efficient reasoning model is Gemma 3 27b.`,
-        'gemma-math': `Coming soon...`,
-        'llama-coding': `Coming soon...`,
-        'gemma-overall': `Coming soon...`,
-        'gemmini': `Coming soon...`,
-        'cursor': `Coming soon...`
+        'gemma-math': `Best Efficient Maths Model is clearly again Gemma 3 27b because it got a clear sweep in scores and when it comes to my question of what day is April 1, it's the only model that gets it right every single time. So clearly it's my pick as Best Efficient Maths Model.`,
+        'llama-coding': `On my test it clearly outperformed its competitors. It was the only model that was able to give me a running snake game with snake having a triangular head and in Python PyQt5, and it was the only model to give me a good working Super Mario game although it was very primitive, but that is what we can expect for models that cost pennies.`,
+        'gemma-overall': `Clearly having a clear sweep in scores when it comes to Reasoning and Maths, I will have to give the best overall to Gemma 3 27b. So on a blind pick, this is the best efficient model.`,
+        'gemmini': `If you have to pick the best pretrained model, then Gemini 2.0 Pro is the one to go. It has the largest context and nothing compares to it. And it's close to top performing models, so for free this is the best you can have. Deepseek v3, Qwen Max and others are free but this model is better than them.`,
+        'cursor': `Agentic IDE can just have perks but on extended use of any IDE you will find that it doesn't matter what you use. Windsurf currently has a lot of features but the biggest problem with that is its flow credits, credits that are used when read, write or do any kind of tool call. There is no plan where you can get unlimited flow credits so you will quickly exhaust your flow credits and the application will be useless. You will have Deepseek V3 but that model is barely usable. But Cursor, although it has limits to premium requests, even after that it has slow mode and you can indefinitely use the models. So just for this reason I think Cursor is best.`
     };
 
     // Modal functionality
