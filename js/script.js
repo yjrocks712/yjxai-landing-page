@@ -56,6 +56,24 @@ document.addEventListener('DOMContentLoaded', () => {
         'cursor': `Agentic IDE can just have perks but on extended use of any IDE you will find that it doesn't matter what you use. Windsurf currently has a lot of features but the biggest problem with that is its flow credits, credits that are used when read, write or do any kind of tool call. There is no plan where you can get unlimited flow credits so you will quickly exhaust your flow credits and the application will be useless. You will have Deepseek V3 but that model is barely usable. But Cursor, although it has limits to premium requests, even after that it has slow mode and you can indefinitely use the models. So just for this reason I think Cursor is best.`
     };
 
+    // Video data for each model
+    const modelVideos = {
+        'grok3': 'QO5YQHFfbRY',         // Grok-1 FULLY TESTED - Fascinating Results!
+        'claude-overall': 'cDih5VGufhY',  // The Most Powerful Way to Use Claude 3.7 Sonnet
+        'openai-math': 'hKxrV9QjU2U',    // OpenAI O3 Mini: Faster, Smarter, But Is It Better?
+        'openai-backend': 'hKxrV9QjU2U',  // OpenAI O3 Mini: Faster, Smarter, But Is It Better?
+        'claude-frontend': 'cDih5VGufhY', // The Most Powerful Way to Use Claude 3.7 Sonnet
+        'gpt-creative': 'XIeZH49yxXY',    // OpenAI o3-Mini Is HERE!
+        'claude-convo': 'GFRhJtn56BM',    // Claude Sonnet 3.5 vs Opus 3
+        'deepseek': 'bOsvI3HYHgI',        // DeepSeek R1 Fully Tested - Insane Performance
+        'gemma-reasoning': 'sn7lpfBQWJs',  // Gemma 3 - 27B: The BEST Open-Source LLM Yet!
+        'gemma-math': 'sn7lpfBQWJs',      // Gemma 3 - 27B: The BEST Open-Source LLM Yet!
+        'llama-coding': 'sn7lpfBQWJs',    // Using same video as placeholder
+        'gemma-overall': 'sn7lpfBQWJs',   // Gemma 3 - 27B: The BEST Open-Source LLM Yet!
+        'gemmini': 'xxCkuxQuT_g',         // Gemma 2 - Google's New 9B and 27B Open Weights Models
+        'cursor': 'kL3lX5dVUCw'           // Microsoft's Phi-4 (placeholder)
+    };
+
     // Modal functionality
     const modal = document.getElementById('model-modal');
     const closeModal = document.querySelector('.close-modal');
@@ -63,6 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalName = document.getElementById('modal-name');
     const modalLogo = document.getElementById('modal-logo');
     const modalOpinion = document.getElementById('modal-opinion');
+    const modalVideo = document.getElementById('modal-video');
 
     // Add click event to all model cards
     recCards.forEach(card => {
@@ -72,12 +91,28 @@ document.addEventListener('DOMContentLoaded', () => {
             const modelName = card.querySelector('.model-name').textContent;
             const logoSrc = card.querySelector('.model-logo img').getAttribute('src');
             const opinion = modelOpinions[modelId] || 'Opinion coming soon...';
+            const videoId = modelVideos[modelId];
             
             // Set modal content
             modalTitle.textContent = modelTitle;
             modalName.textContent = modelName;
             modalLogo.setAttribute('src', logoSrc);
             modalOpinion.innerHTML = `<p>${opinion}</p>`;
+            
+            // Set video content if available
+            if (videoId) {
+                modalVideo.innerHTML = `
+                    <div class="video-embed">
+                        <iframe width="100%" height="315" 
+                            src="https://www.youtube.com/embed/${videoId}" 
+                            title="YouTube video player" frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
+                    </div>
+                `;
+            } else {
+                modalVideo.innerHTML = '<p>No video available for this model.</p>';
+            }
             
             // Show modal with animation
             modal.style.display = 'block';
