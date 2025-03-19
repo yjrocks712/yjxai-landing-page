@@ -58,8 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Video data for each model
     const modelVideos = {
-        'grok3': 'QO5YQHFfbRY',         // Grok-1 FULLY TESTED - Fascinating Results!
-        'claude-overall': 'cDih5VGufhY',  // The Most Powerful Way to Use Claude 3.7 Sonnet
+        'grok3': 'jlfyhBUGnKs',         // Video provided by the user for Grok 3 Thinking
+        'claude-overall': 'jlfyhBUGnKs',  // Using same video as Grok 3 Thinking
         'openai-math': 'hKxrV9QjU2U',    // OpenAI O3 Mini: Faster, Smarter, But Is It Better?
         'openai-backend': 'hKxrV9QjU2U',  // OpenAI O3 Mini: Faster, Smarter, But Is It Better?
         'claude-frontend': 'cDih5VGufhY', // The Most Powerful Way to Use Claude 3.7 Sonnet
