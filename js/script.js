@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modelVideos = {
         'grok3': 'jlfyhBUGnKs',         // Video provided by the user for Grok 3 Thinking
         'claude-overall': ['qwgGUI7PWmY', 'uZSQRzdm4Og'],  // Using same videos as claude-frontend
-        'openai-math': ['qwgGUI7PWmY', 'uZSQRzdm4Og'],    // Both videos side by side
+        'openai-math': 'jlfyhBUGnKs',    // Video provided by the user for Best Maths Model
         'openai-backend': 'jlfyhBUGnKs',  // Using same video as Grok 3 Thinking
         'claude-frontend': ['qwgGUI7PWmY', 'uZSQRzdm4Og'], // Both videos side by side
         'gpt-creative': null,    // No video provided
