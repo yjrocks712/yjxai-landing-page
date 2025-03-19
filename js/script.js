@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'llama-coding': `On my test it clearly outperformed its competitors. It was the only model that was able to give me a running snake game with snake having a triangular head and in Python PyQt5, and it was the only model to give me a good working Super Mario game although it was very primitive, but that is what we can expect for models that cost pennies.`,
         'gemma-overall': `Clearly having a clear sweep in scores when it comes to Reasoning and Maths, I will have to give the best overall to Gemma 3 27b. So on a blind pick, this is the best efficient model.`,
         'gemmini': `If you have to pick the best pretrained model, then Gemini 2.0 Pro is the one to go. It has the largest context and nothing compares to it. And it's close to top performing models, so for free this is the best you can have. Deepseek v3, Qwen Max and others are free but this model is better than them.`,
+        'gemini-multi': `There is no doubt about the only model that is able to take input in text, image, audio and video and output in text and image is this and there is nothing even close. There are some other chinese players like qwen which have video generation but they don't undestand these many modalities. So my pick is this. And any model from ai studio is god for this. If you want how Gemini 2.0 pro performns in this the video is right below.`,
         'cursor': `Agentic IDE can just have perks but on extended use of any IDE you will find that it doesn't matter what you use. Windsurf currently has a lot of features but the biggest problem with that is its flow credits, credits that are used when read, write or do any kind of tool call. There is no plan where you can get unlimited flow credits so you will quickly exhaust your flow credits and the application will be useless. You will have Deepseek V3 but that model is barely usable. But Cursor, although it has limits to premium requests, even after that it has slow mode and you can indefinitely use the models. So just for this reason I think Cursor is best.`
     };
 
@@ -71,6 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'llama-coding': 'urb3FEmX6kY',    // Video provided by the user for efficient models
         'gemma-overall': 'urb3FEmX6kY',   // Video provided by the user for efficient models
         'gemmini': 'HT2Z_n0fAig',         // Video provided by the user for Best Free Pretrained Model
+        'gemini-multi': 'HT2Z_n0fAig',    // Using same video as Gemini 2.0 Pro
         'cursor': null           // No video provided
     };
 
