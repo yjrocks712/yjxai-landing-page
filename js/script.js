@@ -222,4 +222,37 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     
     window.addEventListener('scroll', highlightNavOnScroll);
+
+    // Copy functionality for reasoning problems
+    const copyButtons = document.querySelectorAll('.copy-btn');
+    
+    copyButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const problemNumber = button.getAttribute('data-problem');
+            const problemContent = button.previousElementSibling.textContent;
+            
+            // Create a textarea element to hold the text
+            const textarea = document.createElement('textarea');
+            textarea.value = problemContent;
+            document.body.appendChild(textarea);
+            
+            // Select the text and copy it
+            textarea.select();
+            document.execCommand('copy');
+            
+            // Remove the textarea
+            document.body.removeChild(textarea);
+            
+            // Change button text to indicate copy was successful
+            const originalText = button.textContent;
+            button.textContent = 'Copied!';
+            button.style.backgroundColor = '#4ade80'; // Success green color
+            
+            // Revert button text after 2 seconds
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.backgroundColor = '';
+            }, 2000);
+        });
+    });
 });

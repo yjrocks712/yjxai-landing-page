@@ -990,4 +990,72 @@ footer {
     .modal-video-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* Reasoning Bench Section */
+.reasoning-problems {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.problem-card {
+    background-color: var(--card-bg);
+    border-radius: 1rem;
+    box-shadow: var(--card-shadow);
+    padding: 1.5rem;
+    transition: all 0.3s;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.problem-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.problem-content {
+    flex: 1;
+}
+
+.problem-content p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.problem-content .answer {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.copy-btn {
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: 600;
+    flex-shrink: 0;
+    align-self: flex-start;
+    transition: all 0.3s;
+}
+
+.copy-btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .problem-card {
+        flex-direction: column;
+    }
+    
+    .copy-btn {
+        align-self: flex-end;
+    }
 } 
