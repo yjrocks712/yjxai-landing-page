@@ -7,10 +7,12 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9024904640547627" crossorigin="anonymous"></script>
     <style>
         :root {
-            --primary-color: #6366f1;
-            --accent-color: #8b5cf6;
-            --card-bg: rgba(255, 255, 255, 0.95);
-            --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --primary-color: #000;
+            --accent-color: #333;
+            --card-bg: #fff;
+            --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+            --text-primary: #000;
+            --text-secondary: #333;
         }
         
         * {
@@ -62,11 +64,11 @@
         .profile-info h1 {
             font-size: 1.8rem;
             margin-bottom: 0.5rem;
-            color: #1a202c;
+            color: var(--text-primary);
         }
         
         .profile-info p {
-            color: #4a5568;
+            color: var(--text-secondary);
             font-size: 1.1rem;
             margin-bottom: 0.75rem;
         }
@@ -96,7 +98,7 @@
         
         .app-icon:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
         }
         
         .app-icon i {
@@ -107,13 +109,13 @@
         
         .app-icon h2 {
             font-size: 1.3rem;
-            color: #1a202c;
+            color: var(--text-primary);
             margin-bottom: 0.5rem;
         }
         
         .app-icon p {
             font-size: 0.9rem;
-            color: #4a5568;
+            color: var(--text-secondary);
         }
         
         @media (max-width: 768px) {
