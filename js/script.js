@@ -16,6 +16,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Free Mode Toggle functionality
+    const freeModeToggle = document.getElementById('free-mode-toggle');
+    const recCards = document.querySelectorAll('.rec-card');
+    
+    if (freeModeToggle) {
+        freeModeToggle.addEventListener('change', () => {
+            const isFreeMode = freeModeToggle.checked;
+            
+            recCards.forEach(card => {
+                const isFree = card.getAttribute('data-free') === 'true';
+                
+                if (isFreeMode) {
+                    // Show only free models when in Free Mode
+                    card.style.display = isFree ? 'block' : 'none';
+                } else {
+                    // Show all models when not in Free Mode
+                    card.style.display = 'block';
+                }
+            });
+        });
+    }
+
     // Responsive navigation menu toggle
     const createMobileMenu = () => {
         if (window.innerWidth <= 768 && !document.querySelector('.mobile-menu-btn')) {
