@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Video data for each model
     const modelVideos = {
         'grok3': 'jlfyhBUGnKs',         // Video provided by the user for Grok 3 Thinking
-        'claude-overall': 'jlfyhBUGnKs',  // Using same video as Grok 3 Thinking
+        'claude-overall': ['qwgGUI7PWmY', 'uZSQRzdm4Og'],  // Using same videos as claude-frontend
         'openai-math': ['qwgGUI7PWmY', 'uZSQRzdm4Og'],    // Both videos side by side
         'openai-backend': 'jlfyhBUGnKs',  // Using same video as Grok 3 Thinking
         'claude-frontend': ['qwgGUI7PWmY', 'uZSQRzdm4Og'], // Both videos side by side
