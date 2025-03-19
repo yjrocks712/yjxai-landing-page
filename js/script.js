@@ -64,8 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
         'openai-backend': 'jlfyhBUGnKs',  // Using same video as Grok 3 Thinking
         'claude-frontend': ['qwgGUI7PWmY', 'uZSQRzdm4Og'], // Both videos side by side
         'gpt-creative': 'XIeZH49yxXY',    // OpenAI o3-Mini IS HERE!
-        'claude-convo': 'GFRhJtn56BM',    // Claude Sonnet 3.5 vs Opus 3
-        'deepseek': 'bOsvI3HYHgI',        // DeepSeek R1 Fully Tested - Insane Performance
+        'claude-convo': 'BOjTjsNy6mg',    // Video provided by the user for Best Conversational Model
+        'deepseek': 'xE3qeK3rdhI',        // Video provided by the user for Best Free Model
         'gemma-reasoning': 'sn7lpfBQWJs',  // Gemma 3 - 27B: The BEST Open-Source LLM Yet!
         'gemma-math': 'sn7lpfBQWJs',      // Gemma 3 - 27B: The BEST Open-Source LLM Yet!
         'llama-coding': 'sn7lpfBQWJs',    // Using same video as placeholder
