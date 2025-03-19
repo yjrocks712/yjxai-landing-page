@@ -3,109 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YJxAI - AI Hub</title>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>YJxAI</title>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9024904640547627" crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --primary-color: #6366f1;
+            --accent-color: #8b5cf6;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        h1 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .main-buttons {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .main-btn {
+            background-color: white;
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+        
+        .main-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .tiles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            width: 90%;
+            margin: 0 auto;
+        }
+        
+        .tile {
+            background-color: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .tile:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .tile i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .tile h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+        
+        .tile p {
+            color: #334155;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tile-link {
+            display: inline-block;
+            color: var(--primary-color);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .tile-link:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .main-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .tiles {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <img src="mylogo.png" alt="YJxAI Logo">
-                <h1>YJxAI</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="index.html">Model Recommendations</a></li>
-                    <li><a href="problems.html">Problems</a></li>
-                    <li><a href="projects.html">My Projects</a></li>
-                </ul>
-            </nav>
+    <h1>Welcome to YJxAI</h1>
+    <p>"Let us together endeavor AI, AGI, and ASI as time flies by"</p>
+    
+    <div class="main-buttons">
+        <a href="index.html" class="main-btn">Model Recommendations</a>
+        <a href="problems.html" class="main-btn">Reasoning Problems</a>
+        <a href="projects.html" class="main-btn">My Projects</a>
+    </div>
+    
+    <div class="tiles">
+        <div class="tile">
+            <i class="fas fa-robot"></i>
+            <h3>Model Recommendations</h3>
+            <p>Discover the best AI models for various tasks based on personal testing and evaluation.</p>
+            <a href="index.html" class="tile-link">Explore Models</a>
         </div>
-    </header>
-
-    <main>
-        <section id="home" class="hero">
-            <div class="container">
-                <h1>Welcome to YJxAI</h1>
-                <p>"Let us together endeavor AI, AGI, and ASI as time flies by"</p>
-                <div class="hero-cta">
-                    <a href="index.html" class="btn">Model Recommendations</a>
-                    <a href="problems.html" class="btn">Reasoning Problems</a>
-                    <a href="projects.html" class="btn">My Projects</a>
-                </div>
-                <div class="tiles">
-                    <div class="tile">
-                        <i class="fas fa-robot"></i>
-                        <h3>Model Recommendations</h3>
-                        <p>Discover the best AI models for various tasks based on personal testing and evaluation.</p>
-                        <a href="index.html" class="tile-link">Explore Models</a>
-                    </div>
-                    <div class="tile">
-                        <i class="fas fa-brain"></i>
-                        <h3>Reasoning Problems</h3>
-                        <p>Test your reasoning skills with challenging problems that push the limits of AI.</p>
-                        <a href="problems.html" class="tile-link">Solve Problems</a>
-                    </div>
-                    <div class="tile">
-                        <i class="fas fa-code"></i>
-                        <h3>My Projects</h3>
-                        <p>Explore my AI projects and experiments in the world of artificial intelligence.</p>
-                        <a href="projects.html" class="tile-link">View Projects</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="subscribe">
-            <div class="container">
-                <h2>Stay Updated</h2>
-                <p>Subscribe to our YouTube channel for the latest AI insights</p>
-                <a href="https://www.youtube.com/channel/UCgXDesc6IZBfNWqWJ3fBpdg?sub_confirmation=1" class="btn btn-youtube" target="_blank">
-                    <i class="fab fa-youtube"></i> Subscribe Now
-                </a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="mylogo.png" alt="YJxAI Logo" class="footer-img">
-                    <h3>YJxAI</h3>
-                    <p>"Let us together endeavor AI, AGI, and ASI as time flies by"</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Model Recommendations</a></li>
-                        <li><a href="problems.html">Problems</a></li>
-                        <li><a href="projects.html">My Projects</a></li>
-                        <li><a href="https://www.youtube.com/channel/UCgXDesc6IZBfNWqWJ3fBpdg/videos" target="_blank">Latest Videos</a></li>
-                    </ul>
-                </div>
-                <div class="footer-social">
-                    <h4>Connect With Us</h4>
-                    <div class="social-links">
-                        <a href="https://x.com/JehoashY91708" class="social-link"><i class="fa-brands fa-x-twitter"></i> X (Twitter)</a>
-                        <a href="https://www.youtube.com/channel/UCgXDesc6IZBfNWqWJ3fBpdg" class="social-link youtube-link"><i class="fa-brands fa-youtube"></i> YouTube</a>
-                        <a href="https://github.com/yjrocks712" class="social-link"><i class="fa-brands fa-github"></i> GitHub</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 YJxAI. All rights reserved.</p>
-                <p class="credit">Built by YJ and Cursor</p>
-            </div>
+        <div class="tile">
+            <i class="fas fa-brain"></i>
+            <h3>Reasoning Problems</h3>
+            <p>Test your reasoning skills with challenging problems that push the limits of AI.</p>
+            <a href="problems.html" class="tile-link">Solve Problems</a>
         </div>
-    </footer>
-
-    <script src="js/main.js"></script>
+        <div class="tile">
+            <i class="fas fa-code"></i>
+            <h3>My Projects</h3>
+            <p>Explore my AI projects and experiments in the world of artificial intelligence.</p>
+            <a href="projects.html" class="tile-link">View Projects</a>
+        </div>
+    </div>
 </body>
 </html> 
