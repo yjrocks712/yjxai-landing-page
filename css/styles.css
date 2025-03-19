@@ -263,10 +263,17 @@ nav ul li a:hover {
 
 /* Ad Container */
 .ad-container {
-    background-color: #f1f5f9;
-    padding: 1.5rem 0;
+    padding: 20px 0;
+    background-color: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+    border-bottom: 1px solid #e9ecef;
     text-align: center;
-    margin: 2rem 0;
+}
+
+.ad-container ins {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
 }
 
 /* Recommendations Section */
