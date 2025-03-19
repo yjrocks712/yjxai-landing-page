@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'openai-math': ['qwgGUI7PWmY', 'uZSQRzdm4Og'],    // Both videos side by side
         'openai-backend': 'jlfyhBUGnKs',  // Using same video as Grok 3 Thinking
         'claude-frontend': ['qwgGUI7PWmY', 'uZSQRzdm4Og'], // Both videos side by side
-        'gpt-creative': 'XIeZH49yxXY',    // OpenAI o3-Mini IS HERE!
+        'gpt-creative': null,    // No video provided
         'claude-convo': 'BOjTjsNy6mg',    // Video provided by the user for Best Conversational Model
         'deepseek': 'xE3qeK3rdhI',        // Video provided by the user for Best Free Model
         'gemma-reasoning': 'urb3FEmX6kY',  // Video provided by the user for efficient models
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'llama-coding': 'urb3FEmX6kY',    // Video provided by the user for efficient models
         'gemma-overall': 'urb3FEmX6kY',   // Video provided by the user for efficient models
         'gemmini': 'HT2Z_n0fAig',         // Video provided by the user for Best Free Pretrained Model
-        'cursor': 'kL3lX5dVUCw'           // Microsoft's Phi-4 (placeholder)
+        'cursor': null           // No video provided
     };
 
     // Modal functionality
