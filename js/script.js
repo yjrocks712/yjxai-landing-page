@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'claude-overall': ['qwgGUI7PWmY', 'uZSQRzdm4Og'],  // Using same videos as claude-frontend
         'openai-math': 'jlfyhBUGnKs',    // Video provided by the user for Best Maths Model
         'openai-backend': 'jlfyhBUGnKs',  // Using same video as Grok 3 Thinking
-        'claude-frontend': ['qwgGUI7PWmY', 'uZSQRzdm4Og'], // Both videos side by side
+        'claude-frontend': 'qwgGUI7PWmY', // Only using the first video
         'gpt-creative': null,    // No video provided
         'claude-convo': 'BOjTjsNy6mg',    // Video provided by the user for Best Conversational Model
         'deepseek': 'xE3qeK3rdhI',        // Video provided by the user for Best Free Model
