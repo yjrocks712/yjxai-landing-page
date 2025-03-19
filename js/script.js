@@ -38,6 +38,85 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Model opinions data
+    const modelOpinions = {
+        'grok3': `Why Grok 3 thinking. Simply because It has been able to solve my 64 Tennis Players question and no model till date has been able to do that. And when it comes to other questions it passed them all leaving the seating arrangement question which no model has yet been able to solve. So according to my POV this is the best Reasoning model.`,
+        'openai-math': `Coming soon...`,
+        'openai-backend': `Coming soon...`,
+        'claude-frontend': `Coming soon...`,
+        'claude-overall': `Coming soon...`,
+        'gpt-creative': `Coming soon...`,
+        'claude-convo': `Coming soon...`,
+        'deepseek': `Coming soon...`,
+        'gemma-reasoning': `Coming soon...`,
+        'gemma-math': `Coming soon...`,
+        'llama-coding': `Coming soon...`,
+        'gemma-overall': `Coming soon...`,
+        'gemmini': `Coming soon...`,
+        'cursor': `Coming soon...`
+    };
+
+    // Modal functionality
+    const modal = document.getElementById('model-modal');
+    const closeModal = document.querySelector('.close-modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalName = document.getElementById('modal-name');
+    const modalLogo = document.getElementById('modal-logo');
+    const modalOpinion = document.getElementById('modal-opinion');
+
+    // Add click event to all model cards
+    recCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const modelId = card.getAttribute('data-model');
+            const modelTitle = card.querySelector('h3').textContent;
+            const modelName = card.querySelector('.model-name').textContent;
+            const logoSrc = card.querySelector('.model-logo img').getAttribute('src');
+            const opinion = modelOpinions[modelId] || 'Opinion coming soon...';
+            
+            // Set modal content
+            modalTitle.textContent = modelTitle;
+            modalName.textContent = modelName;
+            modalLogo.setAttribute('src', logoSrc);
+            modalOpinion.innerHTML = `<p>${opinion}</p>`;
+            
+            // Show modal with animation
+            modal.style.display = 'block';
+            setTimeout(() => {
+                modal.classList.add('show');
+            }, 10);
+            
+            // Prevent scrolling on body
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    // Close modal functionality
+    if (closeModal) {
+        closeModal.addEventListener('click', closeModalFunction);
+    }
+
+    // Close modal when clicking outside the content
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModalFunction();
+        }
+    });
+
+    // Close with escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('show')) {
+            closeModalFunction();
+        }
+    });
+
+    function closeModalFunction() {
+        modal.classList.remove('show');
+        setTimeout(() => {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }, 300);
+    }
+
     // Responsive navigation menu toggle
     const createMobileMenu = () => {
         if (window.innerWidth <= 768 && !document.querySelector('.mobile-menu-btn')) {

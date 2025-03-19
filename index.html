@@ -83,7 +83,7 @@
                     </div>
                     
                     <div class="rec-grid">
-                        <div class="rec-card" data-free="false">
+                        <div class="rec-card" data-free="false" data-model="grok3">
                             <div class="model-logo">
                                 <img src="assets/grok.png" alt="Grok AI Logo">
                             </div>
@@ -92,7 +92,7 @@
                             <p class="description"></p>
                         </div>
 
-                        <div class="rec-card" data-free="false">
+                        <div class="rec-card" data-free="false" data-model="openai-math">
                             <div class="model-logo">
                                 <img src="assets/Openai.png" alt="OpenAI Logo">
                             </div>
@@ -101,7 +101,7 @@
                             <p class="description"></p>
                         </div>
 
-                        <div class="rec-card" data-free="false">
+                        <div class="rec-card" data-free="false" data-model="openai-backend">
                             <div class="model-logo">
                                 <img src="assets/Openai.png" alt="OpenAI Logo">
                             </div>
@@ -110,7 +110,7 @@
                             <p class="description"></p>
                         </div>
 
-                        <div class="rec-card" data-free="false">
+                        <div class="rec-card" data-free="false" data-model="claude-frontend">
                             <div class="model-logo">
                                 <img src="assets/anthropic.webp" alt="Anthropic Logo">
                             </div>
@@ -119,7 +119,7 @@
                             <p class="description"></p>
                         </div>
 
-                        <div class="rec-card featured" data-free="false">
+                        <div class="rec-card featured" data-free="false" data-model="claude-overall">
                             <div class="model-logo">
                                 <img src="assets/anthropic.webp" alt="Anthropic Logo">
                             </div>
@@ -128,7 +128,7 @@
                             <p class="description"></p>
                         </div>
 
-                        <div class="rec-card" data-free="false">
+                        <div class="rec-card" data-free="false" data-model="gpt-creative">
                             <div class="model-logo">
                                 <img src="assets/Openai.png" alt="OpenAI Logo">
                             </div>
@@ -137,7 +137,7 @@
                             <p class="description"></p>
                         </div>
 
-                        <div class="rec-card" data-free="false">
+                        <div class="rec-card" data-free="false" data-model="claude-convo">
                             <div class="model-logo">
                                 <img src="assets/anthropic.webp" alt="Anthropic Logo">
                             </div>
@@ -146,7 +146,7 @@
                             <p class="description"></p>
                         </div>
 
-                        <div class="rec-card" data-free="true">
+                        <div class="rec-card" data-free="true" data-model="deepseek">
                             <div class="free-badge">FREE</div>
                             <div class="model-logo">
                                 <img src="assets/deepseek-color.png" alt="DeepSeek Logo">
@@ -156,7 +156,7 @@
                             <p class="description"></p>
                         </div>
 
-                        <div class="rec-card" data-free="false">
+                        <div class="rec-card" data-free="false" data-model="gemma-reasoning">
                             <div class="model-logo">
                                 <img src="assets/Google.webp" alt="Google Logo">
                             </div>
@@ -165,7 +165,7 @@
                             <p class="description"></p>
                         </div>
 
-                        <div class="rec-card" data-free="false">
+                        <div class="rec-card" data-free="false" data-model="gemma-math">
                             <div class="model-logo">
                                 <img src="assets/Google.webp" alt="Google Logo">
                             </div>
@@ -174,7 +174,7 @@
                             <p class="description"></p>
                         </div>
 
-                        <div class="rec-card" data-free="false">
+                        <div class="rec-card" data-free="false" data-model="llama-coding">
                             <div class="model-logo">
                                 <img src="assets/meta.png" alt="Meta Logo">
                             </div>
@@ -183,7 +183,7 @@
                             <p class="description"></p>
                         </div>
 
-                        <div class="rec-card" data-free="false">
+                        <div class="rec-card" data-free="false" data-model="gemma-overall">
                             <div class="model-logo">
                                 <img src="assets/Google.webp" alt="Google Logo">
                             </div>
@@ -192,7 +192,7 @@
                             <p class="description"></p>
                         </div>
 
-                        <div class="rec-card" data-free="true">
+                        <div class="rec-card" data-free="true" data-model="gemmini">
                             <div class="free-badge">FREE</div>
                             <div class="model-logo">
                                 <img src="assets/Google.webp" alt="Google Logo">
@@ -202,7 +202,7 @@
                             <p class="description"></p>
                         </div>
 
-                        <div class="rec-card" data-free="false">
+                        <div class="rec-card" data-free="false" data-model="cursor">
                             <div class="model-logo">
                                 <img src="assets/cursor.png" alt="Cursor Logo">
                             </div>
@@ -342,6 +342,24 @@
             </div>
         </div>
     </footer>
+
+    <!-- Modal for model details -->
+    <div id="model-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <img id="modal-logo" src="" alt="Model Logo">
+                <div>
+                    <h2 id="modal-title"></h2>
+                    <h3 id="modal-name"></h3>
+                </div>
+            </div>
+            <div class="modal-body">
+                <h4>Why I Think So</h4>
+                <div id="modal-opinion"></div>
+            </div>
+        </div>
+    </div>
 
     <script src="js/script.js"></script>
 </body>
