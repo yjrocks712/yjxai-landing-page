@@ -40,15 +40,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Model opinions data
     const modelOpinions = {
-        'grok3': `Why Grok 3 thinking. Simply because It has been able to solve my 64 Tennis Players question and no model till date has been able to do that. And when it comes to other questions it passed them all leaving the seating arrangement question which no model has yet been able to solve. So according to my POV this is the best Reasoning model.`,
-        'openai-math': `Coming soon...`,
-        'openai-backend': `Coming soon...`,
-        'claude-frontend': `Coming soon...`,
-        'claude-overall': `Coming soon...`,
-        'gpt-creative': `Coming soon...`,
-        'claude-convo': `Coming soon...`,
-        'deepseek': `Coming soon...`,
-        'gemma-reasoning': `Coming soon...`,
+        'grok3': `Why Grok 3 Thinking? Simply because it has been able to solve my 64 Tennis Players question and no model till date has been able to do that. And when it comes to other questions, it passed them all leaving the seating arrangement question which no model has yet been able to solve. So according to my POV, this is the best Reasoning model.`,
+        'openai-math': `Why o3 mini high? When I asked Frontier Maths Questions this model was the only one that could solve them. Frontier math is a benchmark that evaluates the capability of current LLMs to solve Research level Frontier Maths problems. The Models iteratively have to work with the user and come to the solution. Other models have not been able to do it, but o3 mini high was the only model to get it correct, so this model according to my POV is the best model when it comes to maths.`,
+        'openai-backend': `By backend coding I mean everything that doesn't require aesthetics. Personally I have built Automatic Caption Generators, Audio/Video Auto-trimming etc. The UI was not that good but these were all functional. I have seen when it comes to physics or anything that doesn't rely on looks, OpenAI reasoning models are superior, so according to my POV o3 mini high is good at it.`,
+        'claude-frontend': `By Frontend Coding model, anything that requires Aesthetics UI/UX, there is no competition especially to Claude 3.7 Sonnet models. The biggest reason according to me is the extended output of this series of model both thinking and non-thinking. Since they can generate very long code, they are able to write entire games in one go! In my test of Super Mario Game, they have given best performance and nearly coded the exact game which before this no model has been able to do. So in my POV, when it comes to frontend coding, this is best up until now.`,
+        'claude-overall': `Best overall is not a model that is best in all. All models have strengths and weaknesses, but this is a model which you can blindly pick. So even though it's not the best in reasoning and maths, but it's one of the top models. So this model is according to me the one that will get your work done in most cases. So in my POV, the best overall is Claude 3.7 Sonnet Thinking.`,
+        'gpt-creative': `So this is very hard to decide and I would personally say this can vary person to person. But I have seen that this model is good if you want to rewrite any content like give it a prompt and make it a new one with slight changes in topic or give it a script and ask it to rewrite to be captivating. In all those scenarios I feel this model gives to-the-point responses. So I have picked this model. But I would say in API this model is very pricey. If you want an alternative, you can go with Claude 3.7 Sonnet.`,
+        'claude-convo': `This again is a personal preference and is based on how the models have been fine-tuned. But from the time of Claude 3 Opus I have seen that Claude models feel more conversational and also for personal advice and everything I have found these models to put their point forward boldly unlike OpenAI models which don't put their point of view very straightforwardly. So according to me this is the best conversational model. But especially this domain can be subjective. And I respect everyone's opinion.`,
+        'deepseek': `Deepseek is the first company other than OpenAI which released a thinking model and this being on par with o1 at that time was absolutely free giving tough competition to OpenAI. Even now this is the best opensource and free reasoning model and best free model overall. But remember to be careful on the website because the website has privacy concerns.`,
+        'gemma-reasoning': `I never thought a 27b model would be able to beat GPT-4o mini, my favorite when it comes to efficient models. It clearly beats GPT-4o mini when it comes to reasoning and there is no doubt about it. So the most efficient reasoning model is Gemma 3 27b.`,
         'gemma-math': `Coming soon...`,
         'llama-coding': `Coming soon...`,
         'gemma-overall': `Coming soon...`,
@@ -168,4 +168,4 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     
     window.addEventListener('scroll', highlightNavOnScroll);
-}); 
+});
