@@ -56,6 +56,43 @@
             transform: translateY(-3px);
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
         }
+        
+        footer {
+            margin-top: 3rem;
+            width: 100%;
+            background-color: rgba(99, 102, 241, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+        
+        footer p {
+            color: #6366f1;
+            font-size: 0.9rem;
+            margin: 0.5rem 0;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1rem 0;
+        }
+        
+        .social-links a {
+            color: #6366f1;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-3px);
+            opacity: 0.8;
+        }
+        
+        .youtube-link {
+            color: #FF0000 !important;
+        }
     </style>
 </head>
 <body>
@@ -93,6 +130,17 @@
             </script>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="https://x.com/JehoashY91708" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.youtube.com/channel/UCgXDesc6IZBfNWqWJ3fBpdg" class="youtube-link" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://github.com/yjrocks712" target="_blank"><i class="fa-brands fa-github"></i></a>
+        </div>
+        <p>&copy; 2023-2025 YJxAI. All rights reserved.</p>
+        <p>"Let us together endeavor AI, AGI, and ASI as time flies by"</p>
+    </footer>
 
     <script src="js/script.js"></script>
 </body>
