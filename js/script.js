@@ -66,10 +66,10 @@ document.addEventListener('DOMContentLoaded', () => {
         'gpt-creative': 'XIeZH49yxXY',    // OpenAI o3-Mini IS HERE!
         'claude-convo': 'BOjTjsNy6mg',    // Video provided by the user for Best Conversational Model
         'deepseek': 'xE3qeK3rdhI',        // Video provided by the user for Best Free Model
-        'gemma-reasoning': 'sn7lpfBQWJs',  // Gemma 3 - 27B: The BEST Open-Source LLM Yet!
-        'gemma-math': 'sn7lpfBQWJs',      // Gemma 3 - 27B: The BEST Open-Source LLM Yet!
-        'llama-coding': 'sn7lpfBQWJs',    // Using same video as placeholder
-        'gemma-overall': 'sn7lpfBQWJs',   // Gemma 3 - 27B: The BEST Open-Source LLM Yet!
+        'gemma-reasoning': 'urb3FEmX6kY',  // Video provided by the user for efficient models
+        'gemma-math': 'urb3FEmX6kY',      // Video provided by the user for efficient models
+        'llama-coding': 'urb3FEmX6kY',    // Video provided by the user for efficient models
+        'gemma-overall': 'urb3FEmX6kY',   // Video provided by the user for efficient models
         'gemmini': 'xxCkuxQuT_g',         // Gemma 2 - Google's New 9B and 27B Open Weights Models
         'cursor': 'kL3lX5dVUCw'           // Microsoft's Phi-4 (placeholder)
     };
