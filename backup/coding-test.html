@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YJxAI - Coding Questions</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9024904640547627" crossorigin="anonymous"></script>
+    
+    <!-- Code highlighting library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    
+    <style>
+        .home-btn {
+            display: inline-block;
+            background-color: white;
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            margin-top: 2rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .home-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .coding-tests {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .test-card {
+            background-color: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s ease;
+        }
+        
+        .test-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .test-card-header {
+            padding: 1.5rem;
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .test-card-header h3 {
+            margin: 0;
+            font-size: 1.3rem;
+        }
+        
+        .test-card-body {
+            padding: 1.5rem;
+        }
+        
+        .test-card-footer {
+            padding: 1rem 1.5rem;
+            background-color: #f8fafc;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .difficulty {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 2rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .difficulty.easy {
+            background-color: #dcfce7;
+            color: #16a34a;
+        }
+        
+        .difficulty.medium {
+            background-color: #fef9c3;
+            color: #ca8a04;
+        }
+        
+        .difficulty.hard {
+            background-color: #fee2e2;
+            color: #dc2626;
+        }
+        
+        .test-btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .test-btn:hover {
+            background-color: var(--accent-color);
+        }
+        
+        .code-snippet {
+            background-color: #282c34;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+        }
+        
+        .code-snippet pre {
+            margin: 0;
+        }
+        
+        .code-snippet code {
+            color: #abb2bf;
+        }
+        
+        .test-description {
+            color: #4a5568;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .tag-list {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+        
+        .tag {
+            font-size: 0.75rem;
+            background-color: #e2e8f0;
+            color: #4a5568;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+        }
+        
+        /* Copy button styling */
+        .copy-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .copy-btn:hover {
+            background-color: var(--accent-color);
+        }
+        
+        .copy-btn i {
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1>Coding Questions</h1>
+            <p>Test your skills with these programming interview questions</p>
+            <a href="main.html" class="home-btn"><i class="fas fa-home"></i> Back to Home</a>
+        </div>
+    </header>
+
+    <div class="page-wrapper">
+        <!-- Left Sidebar Ad - Only visible on large screens -->
+        <aside class="sidebar-ad sidebar-left">
+            <div class="sticky-ad">
+                <ins class="adsbygoogle sidebar-adunit"
+                     style="display:block"
+                     data-ad-client="ca-pub-9024904640547627"
+                     data-ad-slot="YOURADSLOT"
+                     data-ad-format="vertical"
+                     data-full-width-responsive="false"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <section class="section">
+                <div class="container">
+                    <h2 class="section-title">GUI Programming Interview Questions</h2>
+                    <p class="section-desc">Each question is designed to test user interface development skills across various programming languages and frameworks. We're looking for the best possible solutions for each problem. Select a question to begin solving.</p>
+                    
+                    <!-- Category Navigation -->
+                    <div style="margin: 2rem 0; text-align: center;">
+                        <div class="category-nav" style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-bottom: 2rem;">
+                            <a href="#python" class="category-btn" style="padding: 0.5rem 1rem; background-color: var(--primary-color); color: white; border-radius: 0.5rem; text-decoration: none; font-weight: 500;">Python</a>
+                            <a href="#java" class="category-btn" style="padding: 0.5rem 1rem; background-color: var(--primary-color); color: white; border-radius: 0.5rem; text-decoration: none; font-weight: 500;">Java</a>
+                            <a href="#csharp" class="category-btn" style="padding: 0.5rem 1rem; background-color: var(--primary-color); color: white; border-radius: 0.5rem; text-decoration: none; font-weight: 500;">C#</a>
+                            <a href="#javascript" class="category-btn" style="padding: 0.5rem 1rem; background-color: var(--primary-color); color: white; border-radius: 0.5rem; text-decoration: none; font-weight: 500;">JavaScript</a>
+                            <a href="#cpp" class="category-btn" style="padding: 0.5rem 1rem; background-color: var(--primary-color); color: white; border-radius: 0.5rem; text-decoration: none; font-weight: 500;">C++</a>
+                            <a href="#swift" class="category-btn" style="padding: 0.5rem 1rem; background-color: var(--primary-color); color: white; border-radius: 0.5rem; text-decoration: none; font-weight: 500;">Swift</a>
+                            <a href="#kotlin" class="category-btn" style="padding: 0.5rem 1rem; background-color: var(--primary-color); color: white; border-radius: 0.5rem; text-decoration: none; font-weight: 500;">Kotlin</a>
+                            <a href="#dart" class="category-btn" style="padding: 0.5rem 1rem; background-color: var(--primary-color); color: white; border-radius: 0.5rem; text-decoration: none; font-weight: 500;">Dart</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Python Section -->
+                    <h3 id="python" class="category-title" style="margin: 3rem 0 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--primary-color);">Python GUI Development</h3>
+                    <div class="coding-tests">
+                        <!-- Python Question 1 -->
+                        <div class="test-card">
+                            <div class="test-card-header">
+                                <h3>Real-Time Stock Chart</h3>
+                            </div>
+                            <div class="test-card-body">
+                                <p class="test-description"><strong>Question:</strong> How would you write the best possible Python script to display a simulated real-time candlestick chart for stock data with mock data that updates tick-by-tick? Include moving averages, trading volume indicators, color-coded profit/loss visuals, and allow users to select different simulated stocks and timeframes via an intuitive interface. The chart should continuously update to show realistic market behavior. No assets will be provided - your solution must generate all required mock data, images, and icons itself. Provide a complete solution in a single code block.</p>
+                                <div class="tag-list">
+                                    <span class="tag">Data Visualization</span>
+                                    <span class="tag">Python</span>
+                                    <span class="tag">Financial</span>
+                                </div>
+                            </div>
+                            <div class="test-card-footer">
+                                <span class="difficulty medium">Medium</span>
+                                <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Python Question 2 -->
+                        <div class="test-card">
+                            <div class="test-card-header">
+                                <h3>2D Platformer Game</h3>
+                            </div>
+                            <div class="test-card-body">
+                                <p class="test-description"><strong>Question:</strong> How would you create the best possible Python program using Pygame to develop a feature-rich 2D platformer with multiple levels, animated character sprites, collectible items, and a scoring system? No assets will be provided - your solution must generate or fetch any required images, sounds, or graphics itself. Provide a complete solution in a single code block.</p>
+                                <div class="tag-list">
+                                    <span class="tag">Pygame</span>
+                                    <span class="tag">Game Development</span>
+                                    <span class="tag">Python</span>
+                                </div>
+                            </div>
+                            <div class="test-card-footer">
+                                <span class="difficulty hard">Hard</span>
+                                <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Python Question 3 -->
+                        <div class="test-card">
+                            <div class="test-card-header">
+                                <h3>Sensor Data Dashboard</h3>
+                            </div>
+                            <div class="test-card-body">
+                                <p class="test-description"><strong>Question:</strong> How would you build the best possible Python data visualization tool (using Matplotlib or Plotly) that pulls sensor data in real-time and displays it on a comprehensive interactive dashboard with dynamic, live updating graphs? No assets will be provided - your solution must generate or fetch any required data, icons, or visual elements itself. Provide a complete solution in a single code block.</p>
+                                <div class="tag-list">
+                                    <span class="tag">Plotly</span>
+                                    <span class="tag">Dash</span>
+                                    <span class="tag">Python</span>
+                                </div>
+                            </div>
+                            <div class="test-card-footer">
+                                <span class="difficulty medium">Medium</span>
+                                <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Python Question 4 -->
+                        <div class="test-card">
+                            <div class="test-card-header">
+                                <h3>Mobile Step Tracker</h3>
+                            </div>
+                            <div class="test-card-body">
+                                <p class="test-description"><strong>Question:</strong> How would you develop the best possible Python app using Kivy for mobile devices that tracks daily steps and displays them in a visually stunning bar chart? Include a weekly view with smooth swipe navigation, motivational color changes, and achievement badges. No assets will be provided - your solution must generate or fetch any required graphics, icons, or sample data itself. Provide a complete solution in a single code block.</p>
+                                <div class="tag-list">
+                                    <span class="tag">Kivy</span>
+                                    <span class="tag">Mobile Development</span>
+                                    <span class="tag">Python</span>
+                                </div>
+                            </div>
+                            <div class="test-card-footer">
+                                <span class="difficulty medium">Medium</span>
+                                <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Java Section -->
+            <h3 id="java" class="category-title" style="margin: 3rem 0 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--primary-color);">Java GUI Development</h3>
+            <div class="coding-tests">
+                <!-- Java Question 1 -->
+                <div class="test-card">
+                    <div class="test-card-header">
+                        <h3>Traffic System Simulation</h3>
+                    </div>
+                    <div class="test-card-body">
+                        <p class="test-description"><strong>Question:</strong> How would you design the best possible JavaFX application simulating a city's traffic system, complete with moving vehicles, traffic lights, pedestrian crossings, and real-time congestion updates? No assets will be provided - your solution must generate or fetch any required images, models, or textures itself. Provide a complete solution in a single code block.</p>
+                        <div class="tag-list">
+                            <span class="tag">JavaFX</span>
+                            <span class="tag">Simulation</span>
+                            <span class="tag">Java</span>
+                        </div>
+                    </div>
+                    <div class="test-card-footer">
+                        <span class="difficulty hard">Hard</span>
+                        <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                    </div>
+                </div>
+                
+                <!-- Java Question 2 -->
+                <div class="test-card">
+                    <div class="test-card-header">
+                        <h3>Interactive Timeline</h3>
+                    </div>
+                    <div class="test-card-body">
+                        <p class="test-description"><strong>Question:</strong> How would you write the best possible Java Swing program that displays a rich interactive timeline of historical events? Let users scroll horizontally through years with fluid motion, zoom in/out for detail, and implement polished animated transitions when selecting an event. No assets will be provided - your solution must generate or fetch any required images, data, or visual elements itself. Provide a complete solution in a single code block.</p>
+                        <div class="tag-list">
+                            <span class="tag">Swing</span>
+                            <span class="tag">UI Design</span>
+                            <span class="tag">Java</span>
+                        </div>
+                    </div>
+                    <div class="test-card-footer">
+                        <span class="difficulty medium">Medium</span>
+                        <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                    </div>
+                </div>
+                
+                <!-- Java Question 3 -->
+                <div class="test-card">
+                    <div class="test-card-header">
+                        <h3>Music Player with Visual Equalizer</h3>
+                    </div>
+                    <div class="test-card-body">
+                        <p class="test-description"><strong>Question:</strong> How would you create the best possible JavaFX-based music player that includes stunning real-time audio frequency visualization? The equalizer bars should animate precisely in sync with the track being played, with customizable color themes and response sensitivity. No assets will be provided - your solution must generate or fetch any required audio samples, icons, or visual elements itself. Provide a complete solution in a single code block.</p>
+                        <div class="tag-list">
+                            <span class="tag">JavaFX</span>
+                            <span class="tag">Audio Visualization</span>
+                            <span class="tag">Java</span>
+                        </div>
+                    </div>
+                    <div class="test-card-footer">
+                        <span class="difficulty medium">Medium</span>
+                        <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                    </div>
+                </div>
+                
+                <!-- Java Question 4 -->
+                <div class="test-card">
+                    <div class="test-card-header">
+                        <h3>Rotating Earth Simulation</h3>
+                    </div>
+                    <div class="test-card-body">
+                        <p class="test-description"><strong>Question:</strong> How would you develop the best possible Java program using Java 3D or JavaFX 3D to display a photorealistic rotating Earth with accurate day-night cycles, atmospheric effects, and cloud patterns? Include smooth zoom capabilities, orbit controls, and the ability to highlight geographical features. No assets will be provided - your solution must generate or fetch any required textures, models, or data itself. Provide a complete solution in a single code block.</p>
+                        <div class="tag-list">
+                            <span class="tag">JavaFX 3D</span>
+                            <span class="tag">Graphics</span>
+                            <span class="tag">Java</span>
+                        </div>
+                    </div>
+                    <div class="test-card-footer">
+                        <span class="difficulty hard">Hard</span>
+                        <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- C# Section -->
+            <h3 id="csharp" class="category-title" style="margin: 3rem 0 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--primary-color);">C# GUI Development</h3>
+            <div class="coding-tests">
+                <!-- C# Question 1 -->
+                <div class="test-card">
+                    <div class="test-card-header">
+                        <h3>Home Automation Dashboard</h3>
+                    </div>
+                    <div class="test-card-body">
+                        <p class="test-description"><strong>Question:</strong> How would you develop the best possible C# WPF application that visually shows real-time room temperatures, lighting statuses, and door locks on an interactive 3D floor plan? Include animated toggle switches, customizable themes, and voice command capabilities to update each device state. No assets will be provided - your solution must generate or fetch any required models, icons, or sample data itself. Provide a complete solution in a single code block.</p>
+                        <div class="tag-list">
+                            <span class="tag">WPF</span>
+                            <span class="tag">IoT</span>
+                            <span class="tag">C#</span>
+                        </div>
+                    </div>
+                    <div class="test-card-footer">
+                        <span class="difficulty medium">Medium</span>
+                        <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                    </div>
+                </div>
+                
+                <!-- C# Question 2 -->
+                <div class="test-card">
+                    <div class="test-card-header">
+                        <h3>Fractal Tree Generator</h3>
+                    </div>
+                    <div class="test-card-body">
+                        <p class="test-description"><strong>Question:</strong> How would you implement the best possible C# Windows Forms app that draws a mesmerizing animated fractal tree? Let users adjust branch angles, thickness, curvature, and iteration levels in real time with intuitive sliders, while applying dynamic color gradients and optional particle effects for falling leaves. No assets will be provided - your solution must generate all visual elements programmatically. Provide a complete solution in a single code block.</p>
+                        <div class="tag-list">
+                            <span class="tag">Windows Forms</span>
+                            <span class="tag">Graphics</span>
+                            <span class="tag">C#</span>
+                        </div>
+                    </div>
+                    <div class="test-card-footer">
+                        <span class="difficulty medium">Medium</span>
+                        <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                    </div>
+                </div>
+                
+                <!-- C# Question 3 -->
+                <div class="test-card">
+                    <div class="test-card-header">
+                        <h3>Drag-and-Drop Photo Collage</h3>
+                    </div>
+                    <div class="test-card-body">
+                        <p class="test-description"><strong>Question:</strong> How would you create the best possible C# .NET MAUI cross-platform app for building professional photo collages? Allow users to drag-and-drop images onto a canvas, apply filters, masks, and frames, precisely resize and rotate elements with gestures, and add stunning animated transitions between editing states. Include social sharing capabilities. No assets will be provided - your solution must generate or fetch any required sample images, icons, or visual elements itself. Provide a complete solution in a single code block.</p>
+                        <div class="tag-list">
+                            <span class="tag">.NET MAUI</span>
+                            <span class="tag">Cross-platform</span>
+                            <span class="tag">C#</span>
+                        </div>
+                    </div>
+                    <div class="test-card-footer">
+                        <span class="difficulty hard">Hard</span>
+                        <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                    </div>
+                </div>
+                
+                <!-- C# Question 4 -->
+                <div class="test-card">
+                    <div class="test-card-header">
+                        <h3>Music Visualizer</h3>
+                    </div>
+                    <div class="test-card-body">
+                        <p class="test-description"><strong>Question:</strong> How would you write the best possible C# WPF program that takes live microphone input and generates mesmerizing, colorful, dynamic waveforms and spectrograms in real time? Include multiple visualization modes, user-adjustable effects with presets, beat detection for synchronized animations, and recording functionality. No assets will be provided - your solution must generate any required sample audio, icons, or visual elements itself. Provide a complete solution in a single code block.</p>
+                        <div class="tag-list">
+                            <span class="tag">WPF</span>
+                            <span class="tag">Audio Processing</span>
+                            <span class="tag">C#</span>
+                        </div>
+                    </div>
+                    <div class="test-card-footer">
+                        <span class="difficulty hard">Hard</span>
+                        <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- JavaScript Section -->
+            <h3 id="javascript" class="category-title" style="margin: 3rem 0 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--primary-color);">JavaScript Development</h3>
+            <div class="coding-tests">
+                <!-- JavaScript Question 1 -->
+                <div class="test-card">
+                    <div class="test-card-header">
+                        <h3>Interactive Aquarium</h3>
+                    </div>
+                    <div class="test-card-body">
+                        <p class="test-description"><strong>Question:</strong> How would you craft the best possible JavaScript program using HTML5 Canvas to display a lifelike virtual aquarium? Create various fish species with unique behaviors, realistic water effects, bubbles, and underwater plants that sway with currents. Fish should swim naturally, follow the cursor when near, interact with each other, and users can feed them by clicking. No assets will be provided - your solution must generate all graphics programmatically or fetch required resources itself. Provide a complete solution in a single code block.</p>
+                        <div class="tag-list">
+                            <span class="tag">Canvas</span>
+                            <span class="tag">Animation</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="test-card-footer">
+                        <span class="difficulty medium">Medium</span>
+                        <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                    </div>
+                </div>
+                
+                <!-- JavaScript Question 2 -->
+                <div class="test-card">
+                    <div class="test-card-header">
+                        <h3>3D Art Gallery</h3>
+                    </div>
+                    <div class="test-card-body">
+                        <p class="test-description"><strong>Question:</strong> How would you create the best possible Three.js-based immersive 3D art gallery that displays images and 3D objects in a professionally designed virtual environment? Implement intuitive user navigation with mouse and keyboard controls, VR support for 360° exploration, dynamic lighting effects, ambient audio, and interactive artwork descriptions. No assets will be provided - your solution must generate or fetch any required 3D models, textures, or art pieces itself. Provide a complete solution in a single code block.</p>
+                        <div class="tag-list">
+                            <span class="tag">Three.js</span>
+                            <span class="tag">3D Graphics</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="test-card-footer">
+                        <span class="difficulty hard">Hard</span>
+                        <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                    </div>
+                </div>
+                
+                <!-- JavaScript Question 3 -->
+                <div class="test-card">
+                    <div class="test-card-header">
+                        <h3>Live Cryptocurrency Dashboard</h3>
+                    </div>
+                    <div class="test-card-body">
+                        <p class="test-description"><strong>Question:</strong> How would you develop the best possible React web app that shows live cryptocurrency prices in a responsive grid? Include eye-catching color-coded indicators for rising/falling prices, customizable time-frame charts for selected coins, price alerts, portfolio tracking, and market trend analysis. No assets will be provided - your solution must fetch any required data, generate charts, and create necessary icons itself. Provide a complete solution in a single code block.</p>
+                        <div class="tag-list">
+                            <span class="tag">React</span>
+                            <span class="tag">Real-time Data</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="test-card-footer">
+                        <span class="difficulty medium">Medium</span>
+                        <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                    </div>
+                </div>
+                
+                <!-- JavaScript Question 4 -->
+                <div class="test-card">
+                    <div class="test-card-header">
+                        <h3>Mind-Mapping Desktop App</h3>
+                    </div>
+                    <div class="test-card-body">
+                        <p class="test-description"><strong>Question:</strong> How would you implement the best possible Node.js/Electron desktop application for mind mapping? Create a feature-rich system with a force-directed graph to elegantly arrange nodes, support for hierarchical relationships, intuitive drag-and-drop creation of new ideas, and cloud synchronization capabilities. No assets will be provided - your solution must generate or fetch any required icons, sample data, or visual elements itself. Provide a complete solution in a single code block.</p>
+                        <div class="tag-list">
+                            <span class="tag">Electron</span>
+                            <span class="tag">D3.js</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="test-card-footer">
+                        <span class="difficulty hard">Hard</span>
+                        <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- C++ Section -->
+            <h3 id="cpp" class="category-title" style="margin: 3rem 0 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--primary-color);">C++ Development</h3>
+            <div class="coding-tests">
+                <!-- C++ Question 1 -->
+                <div class="test-card">
+                    <div class="test-card-header">
+                        <h3>Image Editor with Filters</h3>
+                    </div>
+                    <div class="test-card-body">
+                        <p class="test-description"><strong>Question:</strong> How would you construct the best possible C++ Qt application that loads an image, applies professional-grade filters (brightness, contrast, blur, saturation, etc.) in real time, and displays the result with an interactive split-view comparison? Include histogram visualization and filter layering. No assets will be provided - your solution must generate or obtain sample images for testing and any required icons itself. Provide a complete solution in a single code block.</p>
+                        <div class="tag-list">
+                            <span class="tag">Qt</span>
+                            <span class="tag">Image Processing</span>
+                            <span class="tag">C++</span>
+                        </div>
+                    </div>
+                    <div class="test-card-footer">
+                        <span class="difficulty medium">Medium</span>
+                        <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                    </div>
+                </div>
+                
+                <!-- C++ Question 2 -->
+                <div class="test-card">
+                    <div class="test-card-header">
+                        <h3>2D Puzzle Game</h3>
+                    </div>
+                    <div class="test-card-body">
+                        <p class="test-description"><strong>Question:</strong> How would you implement the best possible C++ SDL2-based 2D puzzle game with engaging tile-based levels, smooth animated transitions, immersive in-game music with adaptive soundtrack, and a sophisticated scoring mechanic that rewards both speed and strategy? Include a level editor and save/load functionality. No assets will be provided - your solution must generate all required graphics, sounds, and game elements itself. Provide a complete solution in a single code block.</p>
+                        <div class="tag-list">
+                            <span class="tag">SDL2</span>
+                            <span class="tag">Game Development</span>
+                            <span class="tag">C++</span>
+                        </div>
+                    </div>
+                    <div class="test-card-footer">
+                        <span class="difficulty hard">Hard</span>
+                        <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                    </div>
+                </div>
+                
+                <!-- C++ Question 3 -->
+                <div class="test-card">
+                    <div class="test-card-header">
+                        <h3>3D Terrain Explorer</h3>
+                    </div>
+                    <div class="test-card-body">
+                        <p class="test-description"><strong>Question:</strong> How would you develop the best possible C++ OpenGL application showcasing a photorealistic 3D terrain? Include dynamic lighting with day/night cycles, multiple detailed texture layers with parallax mapping, realistic water simulation, weather effects, and a smooth camera system for exploring hills, valleys, and caves. No assets will be provided - your solution must generate all required textures, models, and effects programmatically. Provide a complete solution in a single code block.</p>
+                        <div class="tag-list">
+                            <span class="tag">OpenGL</span>
+                            <span class="tag">3D Graphics</span>
+                            <span class="tag">C++</span>
+                        </div>
+                    </div>
+                    <div class="test-card-footer">
+                        <span class="difficulty hard">Hard</span>
+                        <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                    </div>
+                </div>
+                
+                <!-- C++ Question 4 -->
+                <div class="test-card">
+                    <div class="test-card-header">
+                        <h3>Live Weather App</h3>
+                    </div>
+                    <div class="test-card-body">
+                        <p class="test-description"><strong>Question:</strong> How would you write the best possible C++ Qt Quick program that retrieves live weather data from multiple APIs and displays beautiful animated icons (sun, clouds, rain) with fluid transitions? Include interactive weather maps, forecast comparisons, and dynamic backgrounds that seamlessly transition between day/night states. No assets will be provided - your solution must generate or fetch any required icons, maps, or visual elements itself. Provide a complete solution in a single code block.</p>
+                        <div class="tag-list">
+                            <span class="tag">Qt Quick</span>
+                            <span class="tag">API Integration</span>
+                            <span class="tag">C++</span>
+                        </div>
+                    </div>
+                    <div class="test-card-footer">
+                        <span class="difficulty medium">Medium</span>
+                        <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Swift Section -->
+            <h3 id="swift" class="category-title" style="margin: 3rem 0 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--primary-color);">Swift iOS Development</h3>
+            <div class="coding-tests">
+                <!-- Swift Question 1 -->
+                <div class="test-card">
+                    <div class="test-card-header">
+                        <h3>Daily Water Intake Tracker</h3>
+                    </div>
+                    <div class="test-card-body">
+                        <p class="test-description"><strong>Question:</strong> How would you build the best possible SwiftUI iOS app that visually represents daily water intake in a radial chart? Animate the chart segments as the user logs water, and include a weekly progress view with customizable goals and fluid animations. No assets will be provided - your solution must generate all required graphics, icons, and sample data itself. Provide a complete solution in a single code block.</p>
+                        <div class="tag-list">
+                            <span class="tag">SwiftUI</span>
+                            <span class="tag">Health</span>
+                            <span class="tag">iOS</span>
+                        </div>
+                    </div>
+                    <div class="test-card-footer">
+                        <span class="difficulty medium">Medium</span>
+                        <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                    </div>
+                </div>
+                
+                <!-- Swift Question 2 -->
+                <div class="test-card">
+                    <div class="test-card-header">
+                        <h3>AR Labels</h3>
+                    </div>
+                    <div class="test-card-body">
+                        <p class="test-description"><strong>Question:</strong> How would you create the best possible Swift app combining ARKit and UIKit that places interactive floating text labels in the user's environment? Labels should change color or size based on proximity to the user, feature smooth transitions, and allow the user to interact with them. No assets will be provided - your solution must generate any required 3D models, textures, or sample content itself. Provide a complete solution in a single code block.</p>
+                        <div class="tag-list">
+                            <span class="tag">ARKit</span>
+                            <span class="tag">UIKit</span>
+                            <span class="tag">iOS</span>
+                        </div>
+                    </div>
+                    <div class="test-card-footer">
+                        <span class="difficulty hard">Hard</span>
+                        <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                    </div>
+                </div>
+                
+                <!-- Swift Question 3 -->
+                <div class="test-card">
+                    <div class="test-card-header">
+                        <h3>Creative Drawing Board</h3>
+                    </div>
+                    <div class="test-card-body">
+                        <p class="test-description"><strong>Question:</strong> How would you implement the best possible SwiftUI drawing board that supports multiple brush types, layering, gesture-based undo/redo, and animated brush stroke effects on iPad? Include intuitive color selection and the ability to export creations in various formats. No assets will be provided - your solution must generate all brush textures, sample content, and UI elements itself. Provide a complete solution in a single code block.</p>
+                        <div class="tag-list">
+                            <span class="tag">SwiftUI</span>
+                            <span class="tag">Drawing</span>
+                            <span class="tag">iPad</span>
+                        </div>
+                    </div>
+                    <div class="test-card-footer">
+                        <span class="difficulty medium">Medium</span>
+                        <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                    </div>
+                </div>
+                
+                <!-- Swift Question 4 -->
+                <div class="test-card">
+                    <div class="test-card-header">
+                        <h3>Live Workout Stats</h3>
+                    </div>
+                    <div class="test-card-body">
+                        <p class="test-description"><strong>Question:</strong> How would you develop the best possible Swift iOS fitness app that reads heart rate data from HealthKit in real time, displaying animated workout rings and motivational alerts when users reach milestones? Include detailed workout analysis and customizable goals. No assets will be provided - your solution must generate all required graphics, sample data, and UI elements itself. Provide a complete solution in a single code block.</p>
+                        <div class="tag-list">
+                            <span class="tag">HealthKit</span>
+                            <span class="tag">Fitness</span>
+                            <span class="tag">iOS</span>
+                        </div>
+                    </div>
+                    <div class="test-card-footer">
+                        <span class="difficulty hard">Hard</span>
+                        <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kotlin Section -->
+            <h3 id="kotlin" class="category-title" style="margin: 3rem 0 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--primary-color);">Kotlin Android Development</h3>
+            <div class="coding-tests">
+                <!-- Kotlin Question 1 -->
+                <div class="test-card">
+                    <div class="test-card-header">
+                        <h3>Live Map Tracking</h3>
+                    </div>
+                    <div class="test-card-body">
+                        <p class="test-description"><strong>Question:</strong> How would you create the best possible Android app using Kotlin and Jetpack Compose that shows a live map with a custom animated marker for the user's current location and a trail of recent movements? Include route statistics, customizable trail appearances, and location-based notifications. No assets will be provided - your solution must generate or fetch any required maps, icons, and visual elements itself. Provide a complete solution in a single code block.</p>
+                        <div class="tag-list">
+                            <span class="tag">Jetpack Compose</span>
+                            <span class="tag">Maps</span>
+                            <span class="tag">Android</span>
+                        </div>
+                    </div>
+                    <div class="test-card-footer">
+                        <span class="difficulty medium">Medium</span>
+                        <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                    </div>
+                </div>
+                
+                <!-- Kotlin Question 2 -->
+                <div class="test-card">
+                    <div class="test-card-header">
+                        <h3>Android Chat Interface</h3>
+                    </div>
+                    <div class="test-card-body">
+                        <p class="test-description"><strong>Question:</strong> How would you write the best possible Kotlin-based Android app for real-time chat, featuring animated message bubbles, reaction emojis, typing indicators, and integrated camera support for sharing images? Include message status indicators and read receipts. No assets will be provided - your solution must generate all required icons, sample content, and UI elements itself. Provide a complete solution in a single code block.</p>
+                        <div class="tag-list">
+                            <span class="tag">UI/UX</span>
+                            <span class="tag">Real-time</span>
+                            <span class="tag">Android</span>
+                        </div>
+                    </div>
+                    <div class="test-card-footer">
+                        <span class="difficulty medium">Medium</span>
+                        <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                    </div>
+                </div>
+                
+                <!-- Kotlin Question 3 -->
+                <div class="test-card">
+                    <div class="test-card-header">
+                        <h3>Compose Quiz Game</h3>
+                    </div>
+                    <div class="test-card-body">
+                        <p class="test-description"><strong>Question:</strong> How would you implement the best possible Kotlin interactive quiz game using Jetpack Compose, with animated transitions between questions, a dynamic progress bar that reflects the player's score, and engaging feedback animations for correct/incorrect answers? Include a leaderboard system. No assets will be provided - your solution must generate all required graphics, sample questions, and UI elements itself. Provide a complete solution in a single code block.</p>
+                        <div class="tag-list">
+                            <span class="tag">Jetpack Compose</span>
+                            <span class="tag">Animation</span>
+                            <span class="tag">Android</span>
+                        </div>
+                    </div>
+                    <div class="test-card-footer">
+                        <span class="difficulty medium">Medium</span>
+                        <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                    </div>
+                </div>
+                
+                <!-- Kotlin Question 4 -->
+                <div class="test-card">
+                    <div class="test-card-header">
+                        <h3>ARCore Directions Overlay</h3>
+                    </div>
+                    <div class="test-card-body">
+                        <p class="test-description"><strong>Question:</strong> How would you develop the best possible Kotlin Android ARCore app to overlay interactive 3D direction arrows on the device's camera view, guiding users along a set path in the real world? Include distance indicators, waypoints, and landmark recognition. No assets will be provided - your solution must generate all required 3D models, textures, and sample route data itself. Provide a complete solution in a single code block.</p>
+                        <div class="tag-list">
+                            <span class="tag">ARCore</span>
+                            <span class="tag">Augmented Reality</span>
+                            <span class="tag">Android</span>
+                        </div>
+                    </div>
+                    <div class="test-card-footer">
+                        <span class="difficulty hard">Hard</span>
+                        <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dart Section -->
+            <h3 id="dart" class="category-title" style="margin: 3rem 0 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--primary-color);">Dart Flutter Development</h3>
+            <div class="coding-tests">
+                <!-- Dart Question 1 -->
+                <div class="test-card">
+                    <div class="test-card-header">
+                        <h3>Interactive Floor Plan</h3>
+                    </div>
+                    <div class="test-card-body">
+                        <p class="test-description"><strong>Question:</strong> How would you build the best possible Flutter app showcasing a home's floor plan where users can drag-and-drop virtual furniture with realistic physics? Animate resizing and rotation of objects with haptic feedback, implement different room lighting conditions, and allow users to save multiple design variations. No assets will be provided - your solution must generate all required furniture models, textures, and floor plan layouts itself. Provide a complete solution in a single code block.</p>
+                        <div class="tag-list">
+                            <span class="tag">Flutter</span>
+                            <span class="tag">Design</span>
+                            <span class="tag">Cross-platform</span>
+                        </div>
+                    </div>
+                    <div class="test-card-footer">
+                        <span class="difficulty hard">Hard</span>
+                        <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                    </div>
+                </div>
+                
+                <!-- Dart Question 2 -->
+                <div class="test-card">
+                    <div class="test-card-header">
+                        <h3>Real-Time Weather Dashboard</h3>
+                    </div>
+                    <div class="test-card-body">
+                        <p class="test-description"><strong>Question:</strong> How would you create the best possible Flutter application that pulls weather data for the user's location and animates raindrops or snowflakes on the screen, reflecting the current weather conditions? Include dynamic lighting changes based on time of day, weather-appropriate sound effects, and a 5-day forecast with beautiful transitions. No assets will be provided - your solution must generate or fetch all required weather icons, background images, and sound files itself. Provide a complete solution in a single code block.</p>
+                        <div class="tag-list">
+                            <span class="tag">Flutter</span>
+                            <span class="tag">Animations</span>
+                            <span class="tag">API</span>
+                        </div>
+                    </div>
+                    <div class="test-card-footer">
+                        <span class="difficulty medium">Medium</span>
+                        <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                    </div>
+                </div>
+                
+                <!-- Dart Question 3 -->
+                <div class="test-card">
+                    <div class="test-card-header">
+                        <h3>Step-by-Step Recipe Book</h3>
+                    </div>
+                    <div class="test-card-body">
+                        <p class="test-description"><strong>Question:</strong> How would you implement the best possible Flutter app acting as an interactive recipe book with step-by-step visuals? Include a progress bar, playful animations when moving between steps, ingredient substitution suggestions, cooking timers, and voice command navigation. No assets will be provided - your solution must generate all required recipe images, icons, and sample content itself. Provide a complete solution in a single code block.</p>
+                        <div class="tag-list">
+                            <span class="tag">Flutter</span>
+                            <span class="tag">UI/UX</span>
+                            <span class="tag">Transitions</span>
+                        </div>
+                    </div>
+                    <div class="test-card-footer">
+                        <span class="difficulty medium">Medium</span>
+                        <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                    </div>
+                </div>
+                
+                <!-- Dart Question 4 -->
+                <div class="test-card">
+                    <div class="test-card-header">
+                        <h3>2D Physics Simulation</h3>
+                    </div>
+                    <div class="test-card-body">
+                        <p class="test-description"><strong>Question:</strong> How would you write the best possible Flutter app that simulates advanced 2D physics, dropping random objects that bounce, rotate, and collide on the screen with realistic physics? Let users tap to spawn new objects, implement different material properties, gravity controls, and slow-motion effects. No assets will be provided - your solution must generate all required graphics, textures, and object models itself. Provide a complete solution in a single code block.</p>
+                        <div class="tag-list">
+                            <span class="tag">Flutter</span>
+                            <span class="tag">Physics</span>
+                            <span class="tag">Interactive</span>
+                        </div>
+                    </div>
+                    <div class="test-card-footer">
+                        <span class="difficulty hard">Hard</span>
+                        <button class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subscribe Reminder Section -->
+            <div class="container" style="text-align: center; margin: 3rem auto;">
+                <div class="subscribe-reminder">
+                    <h3>Never Miss An Update!</h3>
+                    <p>📣 <strong>Subscribe to our YouTube channel</strong> for new coding tests and tutorials!</p>
+                    <a href="https://www.youtube.com/channel/UCgXDesc6IZBfNWqWJ3fBpdg?sub_confirmation=1" class="btn btn-youtube-small" target="_blank">
+                        <i class="fab fa-youtube"></i> Subscribe Now
+                    </a>
+                </div>
+            </div>
+
+            <!-- Google Ad Banner -->
+            <div class="ad-container">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-9024904640547627"
+                     data-ad-slot="YOURADSLOT"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </main>
+
+        <!-- Right Sidebar Ad - Only visible on large screens -->
+        <aside class="sidebar-ad sidebar-right">
+            <div class="sticky-ad">
+                <ins class="adsbygoogle sidebar-adunit"
+                     style="display:block"
+                     data-ad-client="ca-pub-9024904640547627"
+                     data-ad-slot="YOURADSLOT"
+                     data-ad-format="vertical"
+                     data-full-width-responsive="false"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="https://x.com/JehoashY91708" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.youtube.com/channel/UCgXDesc6IZBfNWqWJ3fBpdg" class="youtube-link" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://github.com/yjrocks712" target="_blank"><i class="fa-brands fa-github"></i></a>
+        </div>
+        <p>&copy; 2023-2025 YJxAI. All rights reserved.</p>
+        <p>"Let us together endeavor AI, AGI, and ASI as time flies by"</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Function to handle copying question text
+        document.addEventListener('DOMContentLoaded', function() {
+            const copyButtons = document.querySelectorAll('.copy-btn');
+            
+            copyButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Find the parent card and get the question text
+                    const card = this.closest('.test-card');
+                    const questionElement = card.querySelector('.test-description');
+                    
+                    // Get the question text and remove the "Question:" prefix
+                    let questionText = questionElement.textContent;
+                    questionText = questionText.replace(/^.*?Question:\s*/i, '');
+                    
+                    // Create a temporary textarea element to copy the text
+                    const textarea = document.createElement('textarea');
+                    textarea.value = questionText;
+                    document.body.appendChild(textarea);
+                    textarea.select();
+                    
+                    try {
+                        // Execute the copy command
+                        document.execCommand('copy');
+                        
+                        // Provide visual feedback
+                        const originalText = this.innerHTML;
+                        this.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                        
+                        // Reset button text after 2 seconds
+                        setTimeout(() => {
+                            this.innerHTML = originalText;
+                        }, 2000);
+                        
+                    } catch (err) {
+                        console.error('Failed to copy text: ', err);
+                    } finally {
+                        document.body.removeChild(textarea);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
